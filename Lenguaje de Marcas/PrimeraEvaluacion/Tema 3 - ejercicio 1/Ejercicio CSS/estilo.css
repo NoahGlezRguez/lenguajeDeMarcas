@@ -1,0 +1,79 @@
+* {
+	font-family: calibri;
+	margin:auto;
+}
+
+h2, .name {
+	font-style: italic;
+}
+
+#primero::first-letter, #primero span{
+	font-weight: bold;
+}
+
+h1 {
+	font-weight: normal;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+h2 {
+	text-align: right;
+}
+
+p {
+	line-height: 2;
+	text-indent: 30px;
+	text-align: justify;
+	padding: 20px;
+}
+
+#primero::first-letter {
+	font-size: 200%;
+	text-shadow: -5px -6px 2px steelblue;
+}
+
+.name {
+	text-decoration: underline;
+}
+
+.cuadraditos {
+	list-style-type: square;
+}
+
+a:visited, a {
+	color: black;
+}
+
+h1, h2, #primero span, a:hover{
+	color: steelblue;
+}
+
+body {
+	background-image: url("quijote.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	
+}
+
+header {
+	height: 150px;
+}
+
+nav {
+	margin-left: 50px;
+	margin-top: 50px;
+}
+
+article {
+	width: 80%;
+	border: 1px solid black;
+	border-radius: 20px;
+	margin-top: 20px;
+}
+
+#primero {
+	width: 60%;
+	border: 5px double beige;
+}

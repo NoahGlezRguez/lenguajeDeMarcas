@@ -1,0 +1,62 @@
+form {
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-size: 14px;
+	margin: 20px;
+}
+
+fieldset {
+	background-color: papayawhip;
+	color: navy;
+	border: 1px dotted rebeccapurple;
+}
+
+legend {
+	font-weight: bold;
+	font-style: italic;
+	color: indigo;
+}
+
+input {
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	background-color: whitesmoke;
+	color: midnightblue;
+	border: 1px solid rgb(25, 25, 112);
+	border-radius: 10px;
+}
+
+input[type=password] {
+	color: red;
+}
+
+input[type=tel] {
+	border: none;
+}
+
+.nb {
+	color: rgba(255, 196, 0, 0.438);
+	text-shadow: 1px 1px 1px black ;	
+}
+
+textarea:focus{
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	background-color: black;
+	font-size: 2em;
+	color: limegreen;
+}
+
+@media print {
+	fieldset{
+		border-radius: 20px;
+		border: 1px solid black;
+	}
+	legend{
+		font-style: normal;
+		color: black;
+	}
+	textarea {
+
+	}
+	input {
+		border: none;
+	}
+}

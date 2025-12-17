@@ -1,0 +1,82 @@
+body {
+    background-color:bisque;
+    padding: 5px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2em;
+}
+
+.contenedor {
+	/*Estilos generales*/
+	border: 2px dashed indigo;
+	height: 600px;
+
+	/*propiedades FlexBox*/
+	display: flex;
+	/*flex-wrap: wrap;*/
+	/*flex-wrap:nowrap;*/
+	/*flex-direction: column;*/
+	/*flex-direction: column-reverse;*/
+	/*flex-direction: row-reverse;*/
+	/*flex-direction: row;*/
+	flex-flow: row wrap;
+	justify-content: flex-end;
+	/*justify-content: space-between;*/
+	justify-content: center;
+	/*justify-content: space-around;*/
+	/*justify-content: stretch;*/
+	/*align-items: center;*/
+	/*align-items: flex-end;*/
+	align-content: center;
+}
+
+.caja1 {
+    order: 1;
+		flex-grow: 1;
+	border: 1px solid black;
+    margin: 10px;
+    /*padding: 5px;
+    width: 300px;
+	height: 200px;*/
+	/*flex-shrink: 0;
+	flex-basis: 10%;*/
+
+}
+
+.caja2 {
+	order: 4;
+	flex-grow: 1;
+	border: 1px solid black;
+	padding: 5px;
+	margin: 10px;
+	/*font-size: 4em;*/
+	/*flex-basis: 80%;*/
+	
+}
+
+.caja3 {
+	order: 3;
+	flex-grow: 5;
+	border: 1px solid black;
+	padding: 5px;
+	margin: 10px;
+   /* border: 1px solid black;
+    margin: 10px;*/
+    padding: 5px;
+   /* width: 300px;
+	height: 200px;*/
+	
+}
+
+.caja4 {
+	order: 2;
+	flex-grow: 2;
+	border: 1px solid black;
+	padding: 5px;
+	margin: 10px;
+    /*border: 1px solid black;
+    margin: 10px;
+    padding: 5px;
+    width: 300px;
+	height: 200px;*/
+	
+}

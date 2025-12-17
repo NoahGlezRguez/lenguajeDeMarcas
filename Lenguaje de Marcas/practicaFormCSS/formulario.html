@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Formulario</title>
+		<link rel="stylesheet" href="estilo.css">
+	</head>
+	<body>
+		
+		<input	type="button"
+				value="No pinches este botón"
+				onclick="alert('que idiota eres')">
+		<!-- <script type="text/javascript">
+			window.alert("Uy uy uy, esto está muy verde...")
+
+		</script> -->
+
+
+
+		<form id="entregaFormularioNoah" action="redireccion.html" method="get">
+			<fieldset>
+
+				<legend>Datos usuario</legend>
+
+				<label for="email">Email: </label>
+				<input type="email" id="email" name="email" placeholder="email" maxlength="40" required>
+				<label for="repemail">Repita email: </label>
+				<input type="email" id="repemail" name="repemail" placeholder="email" maxlength="40" required autocomplete="off"> <br>
+				<label for="clave">Clave: </label>
+				<input type="password" id="clave" name="clave" placeholder="clave" maxlength="40" required>
+				<label for="repclave">Repita clave: </label>
+				<input type="password" id="repclave" name="repclave" placeholder="clave" maxlength="40" required> <br>
+
+			</fieldset><br>
+
+			<fieldset>
+
+				<legend>Datos personales</legend>
+
+				<label for="nombre">Nombre: </label>
+				<input type="text" id="nombre" name="nombre" required maxlength="40"> <br>
+				<label for="fecnac">Fecha de nacimiento: </label>
+				<input type="date" id="fecnac" name="fecnac" min="1900-01-01" max="2500-12-31"> <br>
+				<label for="sexo">Sexo: </label>
+				<input type="radio" id="hombre" name="sexo" value="Hombre">
+				<label for="hombre">Hombre</label>
+				<input type="radio" id="mujer" name="sexo" value="Mujer">
+				<label for="mujer">Mujer</label>
+				<input type="radio" id="Nobinario" name="sexo" value="No binario">
+				<label class="nb" for="Nobinario">No binario</label> <br>
+				<label for="telefono">Teléfono: </label>
+				<input type="tel" name="telefono" id="telefono" pattern="\d{9}" maxlength="9">
+
+			</fieldset><br>
+
+			<fieldset>
+
+				<legend>Estudios / trabajo</legend>
+
+				<label for="estudios">Estudios: </label>
+				<select name="estudios">
+					<option value="elija"></option>
+					<option value="Estudios1">Estudios1</option>
+					<option value="Estudios2">Estudios2</option>
+				</select> <br> <br>
+				<label for="idiomas">Idiomas: </label>
+				<select multiple name="idiomas">
+					<option value="euskera">Euskera</option>
+					<option value="ingles">Inglés</option>
+				</select> <br><br>
+				<label for="cv">Adjunta tu CV: <br> 
+				<input type="file" name="cv" id="cv" accept=".pdf,.doc,.docx">
+
+			</fieldset><br>
+
+			<fieldset>
+
+				<legend>Otros</legend>
+
+				<label for="numero">Elige tu número favorito:</label>
+				<input type="number" id="numero" name="numero" min="1" max="100"> <br> <br>
+				<label for="color">Elige tu color favorito: </label>
+				<input type="color" id="color" name="color"> <br> <br>
+				<label for="texto">Puedes añadir lo que quieras: </label> <br>
+				<textarea rows="5" cols="19" placeholder="Escribe lo que quieras" name="texto" wrap="soft"></textarea>
+
+			</fieldset><br>
+
+			<input type="reset" value="Limpiar datos"/>
+			<input type="submit" name="aceptar" id="aceptar" value="Enviar datos" onclick="alert('Hola!')">
+		</form>
+
+	</body>
+</html>
