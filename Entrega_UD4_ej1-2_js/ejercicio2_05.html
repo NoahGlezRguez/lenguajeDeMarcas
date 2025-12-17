@@ -6,10 +6,13 @@
 		<title>Ejercicio 02_05</title>
 	</head>
 	<body>
+		<p id="palabraTexto"></p>
+		<p id="textoLargo"></p>
 		<script>
-			var palabraTexto = casa;
-			document.write(palabraTexto);
-
+			var palabraTexto = "casa";
+			document.getElementById("palabraTexto").innerHTML = palabraTexto;
+			var palabraTextoLarga = "Esto más verde en esta asignatura que un pimiento de padrón recién cosechado...";
+			document.getElementById("textoLargo").innerHTML = palabraTextoLarga;
 		</script>
 	</body>
 </html>
