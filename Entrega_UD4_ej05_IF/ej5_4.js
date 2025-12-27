@@ -7,6 +7,8 @@ let num = parseInt(prompt("Introduce un DNI (sin letra), por favor: "));
 
 let letra = prompt("Introduce la letra de ese DNI, por favor: ");
 
+letra = letra.toUpperCase();
+
 if (num > 0 && num <= 99999999){
 	if (letra == letrasDNI[num % 23])
 		alert("El DNI es correcto.");
