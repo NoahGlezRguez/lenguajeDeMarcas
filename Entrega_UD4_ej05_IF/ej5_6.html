@@ -7,6 +7,18 @@
 	<script src="ej5_6.js"></script>
 </head>
 <body>
-	
+	<script>
+		let mas = " + ", menos = " - ", por = " * ", div = " / ", igual = " = ", fin = ".<br>";
+
+		let num1 = parseInt(prompt("Escriba un número"));
+
+		let num2 = parseInt(prompt("Escriba otro número"));
+
+		document.write(num1 + mas + num2 + igual + (num1 + num2) + fin);
+		document.write(num1 + menos + num2 + igual + (num1 - num2) + fin);
+		document.write(num1 + por + num2 + igual + (num1 * num2) + fin);
+		document.write(num1 + div + num2 + igual + (num1 / num2) + fin);
+
+	</script>
 </body>
 </html>
