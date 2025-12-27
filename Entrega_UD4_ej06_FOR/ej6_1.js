@@ -1,15 +1,9 @@
 
 let num1 = parseInt(prompt("Escriba un número"));
 
-let num = num1;
-let reps = num1;
+let resultado = 1;
 
-let resultado = num1;
+for (let i = num1; i > 0; i--)//cada iteracion multiplica a 'resultado' por 'num1' y resta 1 a 'num1'
+	resultado *= i;
 
-for (let i = 0; i < reps; i++){
-	num1 -= i;
-	resultado *= num1;
-}
-
-
-alert("El resultado de calcular el factorial de " + num + " es " + resultado);
+alert("El resultado de calcular el factorial de " + num1 + " es " + resultado);
