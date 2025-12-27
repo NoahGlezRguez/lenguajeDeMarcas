@@ -1,6 +1,6 @@
-let num1 = parseInt(Math.random(10, 1 + 1) * 10);
+let num1 = parseInt(Math.random() * 10) + 1;
 
-let num2 = prompt("Escribe un nº entre el 1 y el 10: ");
+let num2 = parseInt(prompt("Escribe un nº entre el 1 y el 10: "));
 
 if (num1 == num2)
 	alert("¡Has acertado!");
