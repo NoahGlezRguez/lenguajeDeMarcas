@@ -6,7 +6,7 @@ function daLaVuelta(num){
 	let numInverso = "";
 
 	for (let i = 0; i < num.length; i++)
-		numInverso = texto.charAt(i) + numInverso;
+		numInverso = num.charAt(i) + numInverso;
 	return (numInverso);
 }
 
