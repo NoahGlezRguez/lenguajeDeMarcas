@@ -14,7 +14,8 @@ function esPalindromo(texto){
 	for (let i = texto.length - 1; i >= 0; i--){
 		if (texto.charCodeAt(i) >= 97 && texto.charCodeAt(i) <= 122)//hay que cuidar los indices para que funcione
 		//empieza en length - 1 y debe llegar HASTA el cero
-			str2 =  texto.charAt(i) + str2;
+			str2 = str2 + texto.charAt(i); //si lo recorro invertido, lo copio no-invertido
+			//si no, siempre seran palindromos al ser copiados iguales
 	}
 
 	if (str1 == str2)
