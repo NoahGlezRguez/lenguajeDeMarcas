@@ -11,11 +11,12 @@ function esPalindromo(texto){
 			str1 = str1 + texto.charAt(i);
 	}
 
-	for (let i = texto.length; i > 0; i--){
-		if (texto.charCodeAt(i) >= 97 && texto.charCodeAt(i) <= 122)
+	for (let i = texto.length - 1; i >= 0; i--){
+		if (texto.charCodeAt(i) >= 97 && texto.charCodeAt(i) <= 122)//hay que cuidar los indices para que funcione
+		//empieza en length - 1 y debe llegar HASTA el cero
 			str2 =  texto.charAt(i) + str2;
 	}
-	
+
 	if (str1 == str2)
 		alert("Es un palíndromo");
 	else
