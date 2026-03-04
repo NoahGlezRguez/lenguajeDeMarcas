@@ -1,0 +1,18 @@
+c) Suponiendo que es indiferente el orden de los elementos, ¿se podría cambiar esto
+		
+		<xs:element name="alumno" maxOccurs="unbounded">
+		<xs:complexType>
+		<xs:sequence>
+
+por esto otro?
+		
+		<xs:element name="alumno" maxOccurs="unbounded">
+		<xs:complexType>
+		<xs:all>
+
+¿En qué ejercicio sí y en cuál no?
+
+	1	si
+	2	
+	3 a	
+	3 b 
