@@ -5,7 +5,7 @@
 		<xs:complexType>
 			<xs:sequence>
 
-				<xs:element name="alumno">
+				<xs:element name="alumno" maxOccurs="unbounded">
 					<xs:complexType>
 						<xs:sequence>
 							
@@ -26,11 +26,11 @@
 							</xs:element>
 
 							<xs:choice>
-								<xs:element name="telefono" minOccurs="0" maxOccurs="1" type="xs:integer"/>
-								<xs:element name="movil" minOccurs="0" maxOccurs="3" type="xs:integer"/>
+								<xs:element name="telefono" minOccurs="1" maxOccurs="1" type="xs:integer"/>
+								<xs:element name="movil" minOccurs="1" maxOccurs="3" type="xs:integer"/>
 							</xs:choice>
 
-							<xs:element name="email" minOccurs="0" maxOccurs="1" type="xs:string"/>
+							<xs:element name="email" type="xs:string"/>
 						
 						</xs:sequence>		
 					</xs:complexType>
