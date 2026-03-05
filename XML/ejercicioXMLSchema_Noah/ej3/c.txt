@@ -12,7 +12,7 @@ por esto otro?
 
 ¿En qué ejercicio sí y en cuál no?
 
-	1		si se puede
-	2		no porque
-	3 a	
-	3 b 
+	1		si se puede 
+	2		si se puede 
+	3 a		no se puede: telefono puede haber 2 y movil puede no aparecer, rompe norma de all
+	3 b 	no se puede: movil puede haber tres, rompe norma de all
