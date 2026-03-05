@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-	<xs:alumnos>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	
+<xs:element name="alumnos">
 		<xs:complexType>
 			<xs:sequence>
+
 				<xs:element name="alumno" maxOccurs="unbounded">
 					<xs:complexType>
 						<xs:sequence>
+
 							<xs:element name="dni" type="xs:string"/>
 							<xs:element name="nombre" type="xs:string"/>
+							
 							<xs:element name="direccion">
 								<xs:complexType>
 									<xs:sequence>
+
 										<xs:element name="calle" type="xs:string"/>
 										<xs:element name="numero" type="xs:integer"/>
 										<xs:element name="ciudad" type="xs:string"/>
@@ -18,11 +23,15 @@
 									</xs:sequence>
 								</xs:complexType>				
 							</xs:element>
+
 							<xs:element name="telefono" type="xs:integer"/>
+						
 						</xs:sequence>		
 					</xs:complexType>
 				</xs:element>
+			
 			</xs:sequence>
 		</xs:complexType>
-	</xs:alumnos>
-</xsd:schema>
+	</xs:element>
+
+</xs:schema>
