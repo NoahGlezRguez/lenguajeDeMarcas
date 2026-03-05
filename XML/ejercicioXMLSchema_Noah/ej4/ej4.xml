@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <alumnos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="schemaEjercicio2Schema.xsd">
+	xsi:noNamespaceSchemaLocation="schemaEjercicio4Schema.xsd">
 	<alumno>
 		<dni>11111111</dni>
 		<nombre>Iraide Etxeberria</nombre>
@@ -11,6 +11,7 @@
 			<provincia>Bizkaia</provincia>
 		</direccion>
 		<telefono>944000000</telefono>
+		<email>ertset</email>
 	</alumno>
 	<alumno>
 		<dni>22222222</dni>
@@ -22,5 +23,6 @@
 			<provincia>Bizkaia</provincia>
 		</direccion>
 		<telefono>944999999</telefono>
+		<email>ertsert</email>
 	</alumno>
 </alumnos> 
