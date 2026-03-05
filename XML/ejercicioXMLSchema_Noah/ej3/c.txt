@@ -12,7 +12,7 @@ por esto otro?
 
 ¿En qué ejercicio sí y en cuál no?
 
-	1	si
-	2	
+	1		si se puede
+	2		no porque
 	3 a	
 	3 b 
