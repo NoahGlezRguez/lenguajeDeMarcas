@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <alumnos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="schemaEjercicio5Schema.xsd">
-	<alumno>
-		<dni>11111111</dni>
+	<alumno dni="45645645h" repetidor="true" fechaNacimiento="1994-06-12">
 		<nombre>Iraide Etxeberria</nombre>
 		<direccion>
 			<calle>Kalenagusia</calle>
@@ -13,8 +12,7 @@
 		<telefono>944000000</telefono>
 		<email>ertset</email>
 	</alumno>
-	<alumno>
-		<dni>22222222</dni>
+	<alumno dni="12345678g" fechaNacimiento="1996-09-30">
 		<nombre>Joseba Mikel Zarraga</nombre>
 		<direccion>
 			<calle>Gorbeia</calle>
@@ -22,7 +20,8 @@
 			<ciudad>Artea</ciudad>
 			<provincia>Bizkaia</provincia>
 		</direccion>
-		<telefono>944999999</telefono>
+		<movil>622999999</movil>
+		<movil>622456789</movil>
 		<email>ertsert</email>
 	</alumno>
 </alumnos> 

@@ -12,7 +12,6 @@
 		</xs:sequence>
 	</xs:complexType>	
 
-
 	<xs:element name="alumnos">
 		<xs:complexType>
 			<xs:sequence>
@@ -20,8 +19,7 @@
 				<xs:element name="alumno" maxOccurs="unbounded">
 					<xs:complexType>
 						<xs:sequence>
-							
-							<xs:element name="dni" type="xs:string"/>
+
 							<xs:element name="nombre" type="xs:string"/>
 
 							<xs:element name="direccion" type="TipoDireccion"/>
@@ -32,8 +30,13 @@
 							</xs:choice>
 
 							<xs:element name="email" type="xs:string"/>
-						
-						</xs:sequence>		
+							
+						</xs:sequence>
+
+						<xs:attribute name="dni" type="xs:string" use="required"/>
+						<xs:attribute name="repetidor" type="xs:boolean" default="false"/>
+						<xs:attribute name="fechaNacimiento" type="xs:date" use="required"/>
+
 					</xs:complexType>
 				</xs:element>
 
