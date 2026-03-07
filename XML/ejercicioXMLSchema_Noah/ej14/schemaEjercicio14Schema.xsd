@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	
+	<xs:simpleType name="formatoMatricula">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9]{4}-[B-DF-HJ-NPR-TV-Z]{3}"></xs:pattern>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="formatoDNI">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9]{8}[A-Z-[IOU]]"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="formatoNIE">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="(X|Y|Z)[0-9]{7}[A-Z-[IOU]]"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:element name="datos">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="perfil">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="matricula" type="formatoMatricula"/>
+							<xs:choice>
+								<xs:element name="DNI" type="formatoDNI"/>
+								<xs:element name="NIE" type="formatoNIE"/>
+							</xs:choice>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

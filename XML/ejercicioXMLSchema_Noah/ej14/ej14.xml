@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datos 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:noNamespaceSchemaLocation="schemaEjercicio14Schema.xsd">
+	<perfil>
+		<matricula>1234-BDC</matricula>
+		<DNI>65498721G</DNI>
+	</perfil>
+	<perfil>
+		<matricula>7894-GGG</matricula>
+		<NIE>X7897894D</NIE>
+	</perfil>
+	<perfil>
+		<matricula>3216-MSD</matricula>
+		<DNI>14513455K</DNI>
+	</perfil>
+</datos>
