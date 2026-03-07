@@ -50,7 +50,7 @@
 
 			<xs:element name="provincia" type="texto50char"/>
 			
-			<xs:element name="verificado">
+			<xs:element name="verificado" minOccurs="0">
 				<xs:complexType/>
 			</xs:element>
 
