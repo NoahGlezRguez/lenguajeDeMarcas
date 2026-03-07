@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<ejercicio13 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="schemaEjercicio13Schema.xsd">
+	<temperatura escala="Celsius">37</temperatura>
+</ejercicio13> 
