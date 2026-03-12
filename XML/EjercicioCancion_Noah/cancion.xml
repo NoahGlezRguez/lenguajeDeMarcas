@@ -4,22 +4,22 @@
 	<titulo>Lost on You</titulo>
 	<compositores>
 		<compositor>
-			<nombre>Laura</nombre>
-			<apellido>Pergolizzi</apellido>
+			<nombres>Laura</nombres>
+			<apellidos>Pergolizzi</apellidos>
 		</compositor>
 		<compositor>
-			<nombre>Nate</nombre>
-			<apellido>Campany</apellido>
+			<nombres>Nate</nombres>
+			<apellidos>Campany</apellidos>
 		</compositor>
 	</compositores>
 	<productores>
 		<productor>
-			<nombre>Mike</nombre>
-			<apellido>Del Rio</apellido>
+			<nombres>Mike</nombres>
+			<apellidos>Del Rio</apellidos>
 		</productor>
 		<productor>
-			<nombre>PJ</nombre>
-			<apellido>Bianco</apellido>
+			<nombres>PJ</nombres>
+			<apellidos>Bianco</apellidos>
 		</productor>
 	</productores>
 	<sello>Vagrant Records / Warner Bros.</sello>
