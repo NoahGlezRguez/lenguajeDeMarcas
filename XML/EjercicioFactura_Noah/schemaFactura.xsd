@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:simpleType name="num_id">
+		<xs:restriction base="xs:integer">
+			<xs:pattern value="[0-9]{2,4}"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="num_kp">
+		<xs:restriction base="xs:integer">
+			<xs:pattern value="[0-9]{5}"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="palabras">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[A-Z]{1}[a-z]{1,20}(\s([A-Z])?[a-z]{1,20})*"></xs:pattern>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="descripcion">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="5"/>
+			<xs:maxLength value="80"></xs:maxLength>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="direcciones">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="8"/>
+			<xs:maxLength value="50"></xs:maxLength>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:element name="faktura">
+		<xs:complexType>
+			 <xs:sequence>
+				<xs:element name="f_data" type="xs:dateTime"/>
+				<xs:element name="saltzailea">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="izena" type="palabras"/>
+						</xs:sequence>
+						<xs:attribute name="id" type="num_id" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="bezeroa">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="izena" type="palabras"/>
+							<xs:element name="helbidea">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="kale" type="direcciones"/>
+										<xs:element name="kp" type="num_kp"/>
+										<xs:element name="herria" type="palabras"/>
+										<xs:element name="probintzia" type="palabras"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="telefonoa" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute name="num">
+										<xs:simpleType>
+											<xs:restriction base="xs:integer">
+												<xs:pattern value="(9|6)[0-9]{8}"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="id" type="num_id" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="artikulua" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="deskribapena" type="descripcion"/>
+							<xs:element name="prezioa">
+								<xs:simpleType>
+									<xs:restriction base="xs:decimal">
+										<xs:minExclusive value="0"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="kantitatea">
+								<xs:simpleType>
+									<xs:restriction base="xs:integer">
+										<xs:minInclusive value="1"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="id" type="num_id" use="required"/>
+						<xs:attribute name="bez" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+									<xs:minExclusive value="0"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="deskontua" minOccurs="0">
+					<xs:simpleType>
+					<xs:restriction base="xs:integer">
+			 			<xs:minInclusive value="0"/>
+						<xs:maxInclusive value="100"/>
+					</xs:restriction>
+				</xs:simpleType>
+				</xs:element>
+			 </xs:sequence>
+			 <xs:attribute name="id" type="num_id"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
