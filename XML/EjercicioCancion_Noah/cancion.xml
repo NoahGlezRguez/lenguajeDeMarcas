@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cancion xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:noNamespaceSchemaLocation="schemaCancion.xsd" duracion="4:28" anio="2016">
+	<titulo>Lost on You</titulo>
+	<compositores>
+		<compositor>
+			<nombre>Laura</nombre>
+			<apellido>Pergolizzi</apellido>
+		</compositor>
+		<compositor>
+			<nombre>Nate</nombre>
+			<apellido>Campany</apellido>
+		</compositor>
+	</compositores>
+	<productores>
+		<productor>
+			<nombre>Mike</nombre>
+			<apellido>Del Rio</apellido>
+		</productor>
+		<productor>
+			<nombre>PJ</nombre>
+			<apellido>Bianco</apellido>
+		</productor>
+	</productores>
+	<sello>Vagrant Records / Warner Bros.</sello>
+	<artista>LP (Laura Pergolizzi)</artista>
+</cancion>
