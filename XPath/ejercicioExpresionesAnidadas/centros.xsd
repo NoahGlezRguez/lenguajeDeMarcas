@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="centros">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="centro" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="nombre" type="xs:string"></xs:element>
+							<xs:element name="web" type="xs:string"></xs:element>
+							<xs:element name="ciclos">
+								<xs:complexType>
+									<xs:sequence maxOccurs="unbounded">
+										<xs:element name="ciclo">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="nombre" type="xs:string"></xs:element>
+													<xs:element name="grado" type="xs:string"></xs:element>
+													<xs:element name="decretoTitulo">
+														<xs:complexType>
+															<xs:attribute name="anio" type="xs:gYear"/>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="id" type="xs:string"></xs:attribute>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>	
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="modulos">
+								<xs:complexType>
+									<xs:sequence maxOccurs="unbounded">
+										<xs:element name="modulo">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="nombre"></xs:element>
+													<xs:element name="curso"></xs:element>
+													<xs:element name="horasSemanales"></xs:element>
+													<xs:sequence maxOccurs="unbounded">
+														<xs:element name="ciclo" type="xs:string"></xs:element>
+													</xs:sequence>
+												</xs:sequence>
+												<xs:attribute name="id" type="xs:integer"></xs:attribute>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
