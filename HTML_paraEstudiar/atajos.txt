@@ -1,0 +1,39 @@
+</br> salto de linea 
+
+<p> </p> parrafo 
+
+<h1></h1> cabeceras con h (del 1 al 6)
+
+<b> </b> bold 
+
+<i> </i> cursiva
+
+<u> </u> subrayado 
+
+<del> </del> tachado 
+
+<ins> </ins> insertado 
+
+<sub> </sub> subindice
+
+<sup> </sup> superindice
+
+<small> </small> algo mas pequeño
+
+<strong> </strong> texto importante
+
+<em> /<em> enfatizar texto
+
+<mark> </mark> resaltar texto
+
+------------------------------------------------
+CAMBIAR LA DIRECCION:
+<bdo> </bdo> con el atributo dir con el valor rtl o ltr (right to left op left to right)
+------------------------------------------------
+
+<pre> </pre> preformateado
+
+CARACTERES ESPECIALES EN HTML:
+	https://ascii.cl/es/codigos-html.htm
+
+
