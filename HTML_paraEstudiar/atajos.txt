@@ -1,39 +1,239 @@
-</br> salto de linea 
+GENERAL
+--------
 
-<p> </p> parrafo 
+<br/> 	salto de linea 
+<hr/> 	linea horizontal
+<!-- --> 	comentarios
 
-<h1></h1> cabeceras con h (del 1 al 6)
+<p>		parrafo
+<pre> 	preformateado
+<h1>	cabeceras con h (del 1 al 6)
 
-<b> </b> bold 
+<b>		bold 
+<i>		cursiva
+<u>		subrayado
+<q>		texto entre comillas
 
-<i> </i> cursiva
+<del> 	tachado 
+<ins>  	insertado 
+<sub> 	subindice
+<sup>  	superindice
 
-<u> </u> subrayado 
+<small> 	algo mas pequeño
+<strong> 	texto importante
+<em> 		enfatizar texto
+<mark> 		resaltar texto
 
-<del> </del> tachado 
+<blockquote> indenta el texto en un nuevo parrafo
+<abbr> 		abreviatura (util para motores de busqueda)
+<address>  	datos de contacto
+<cite>  	titulo de un trabajo (?)
 
-<ins> </ins> insertado 
 
-<sub> </sub> subindice
-
-<sup> </sup> superindice
-
-<small> </small> algo mas pequeño
-
-<strong> </strong> texto importante
-
-<em> /<em> enfatizar texto
-
-<mark> </mark> resaltar texto
-
-------------------------------------------------
 CAMBIAR LA DIRECCION:
-<bdo> </bdo> con el atributo dir con el valor rtl o ltr (right to left op left to right)
-------------------------------------------------
+<bdo> con el atributo dir con el valor rtl o ltr (right to left op left to right)
 
-<pre> </pre> preformateado
+----------------------------------------------------------------------------------------------------------
 
 CARACTERES ESPECIALES EN HTML:
 	https://ascii.cl/es/codigos-html.htm
 
+----------------------------------------------------------------------------------------------------------
 
+En <head> </head> solamente se pueden poner las siguientes etiquetas <>:
+	- title
+	- meta
+	- style
+	- base
+	- link
+	- script
+	- noscript
+Sobre meta:
+	- Tiene diversidad de atributos:
+		· charset
+		· name (author, content, owner) ... [sospecho que se podria poner lo que quieras de palabras clave con contenido - CONSULTAR] -> me recuerda a css?
+Sobre link:
+	- css
+	- js
+	link -> atributo rel="" href="" type=""
+	donde:
+		- rel es stylesheet
+		- href es la ruta
+		- type="text/css" es si es css
+	Se puede incrustar codigo css usando la etiqueta style pero evitaremos esta practica
+	Para js:
+		- <script src="ruta"></script> para enlazar con un archivo externo
+		- <script type="text/javascript"> //codigo js </script>
+	<noscript> se usaria para mandar un mensaje en caso de que un navegador no soporte javascript
+----------------------------------------------------------------------------------------------------------
+
+LISTAS:
+-------
+
+<ul>	unordered
+<ol>	ordered:
+	- se puede cambiar el sistema de ordenacion con el atributo type="" dentro de <ol>
+	
+	- A		letras mayus
+	- a		letras minus
+	- 1		numeros
+	- I		numeros romanos en mayus
+	- i		numeros romanos en minus
+	
+	- reversed	ordenacion inversa
+	- start		valor de inicio diferente
+
+<li>	elemento de lista - list item
+
+----------------------------------------------------------------------------------------------------------
+
+LISTAS DE DEFINICIONES:
+-----------------------
+
+<dl>	definiciones para principio y fin de la lista
+<dt>	termino a definir
+<dd>	definicion del termino
+
+----------------------------------------------------------------------------------------------------------
+
+IMÁGENES:
+---------
+
+Vectorial o mapa de bits
+Mapa de bits -> formatos:
+	- bmp 	(estandar de windows) -> pesan mucho, no se usan en internet
+	- jpeg	24 bits de paleta de color
+	- png	gran calidad, peso razonable, muy usado en internet, permite transparencias y filtros
+	- gif	256 colores en la paleta, puede ser animado usando una secuencia, permite transparencias
+
+Imágenes contenidas en la página:
+	<img/> con posibles atributos:
+		- src	para indicar la imagen
+		- alt 	texto alternativo
+		- width		anchura (px)
+		- height	altura (px)
+	Para mostrar diferentes imágenes dependiendo del tamaño de la visualización, se usa:
+		- <picture> 	contiene dos etiquetas obligatorias:
+			· <source/>		atributos: srcset (fichero de imagen) y media (norma a aplicar segun ancho, alto u orientacion)
+			· <img>			si no cumple ninguna de las normas de source, esta será la imagen a mostrar
+			· de source pueden haber muchas pero de img solo una
+	***media-> se puede combinar: max-width, min-width, max-height, min-height, orientation (portrait o landscape) [CONSULTAR]
+
+----------------------------------------------------------------------------------------------------------
+
+MAPAS DE IMÁGENES:
+------------------
+
+html permite dividir una imagen en areas, con links diferentes para cada una de las areas (zonas activables o hot spots)
+un mapa de imagenes es como una plantila transparente del mismo tamaño que la imagen, y se definen los hot spots
+cuando el usuario clica, cree que esta pintando pero en realidad solamente esta haciendo click sobre el mapa
+
+<map> 	atributo: name para el nombre del mapa
+<area>	hot spot. atributos:
+	- shape		valores: circle(x, y, radio), poly (x, y, x, y, x, y...)(poligonal), rect(x, y, x, y)
+	- coords	aqui se indican las coordenadas para el area
+	- href		destino del enlace
+	- target	donde abrir el enlace
+	- alt		texto alternativo
+
+Para usar el mapa, crearemos una imagen pero le pondremos el atributo usemap="#mapa1" detras del atributo src="rutaImagen"
+
+----------------------------------------------------------------------------------------------------------
+
+ENLACES:
+--------
+
+<a> atributos:
+	- href=""	ruta
+	- target	donde abrir el enlace. valores:
+		· _blank	nueva ventana o pestaña
+		· _self		misma (es el predeterminado)
+
+Tipos de enlaces:
+	- internos		lugar diferente DENTRO DE LA MISMA PAGINA -> ej: <a href="#abajo"> Ir abajo</a>
+					para poder usar #, se debe crear un id en un elemento (id es un atributo al que se le da el valor que se quiera)
+	- locales		conecta con otros archivos html de nuestra web	
+	- remotos		fuera de nuestro sitio web
+	- con archivos	se indica la ruta del archivo y si el usuario clica, descargará automáticamente dicho archivo
+	- mixtos		local e interno, por ejemplo
+
+Enlaces sobre imágenes:
+	<a href="enlaceWeb"> <img src="rutaImagen"/> </a>
+
+----------------------------------------------------------------------------------------------------------
+
+MULTIMEDIA:
+-----------
+
+Para poder ejecutar contenido multimedia (subprogramas de java, vídeos, sonidos, animaciones de flash...), debe haber instalados los 
+plugins correspondientes.
+
+Audio <audio> :
+	<audio controls>
+		<source src="aaa.mp3" type="audio/mpeg">
+		<source src="aaa.ogg" type="audio/ogg">
+		Tu navegador no soporta este tipo de audio.
+	</audio>
+
+	atributos:
+		- autoplay
+		- controls
+		- loop
+		- preload (valores: auto, metadata, none)
+		- src	
+Vídeo <video> :
+	atributos iguales que audio y tambien:
+		- height	
+		- width		
+		- muted		
+		- poster	cuando este descargandose o antes de pulsar play, una imagen de portada
+	solucion de youtube:
+		etiqueta <iframe> con atributos:
+			- width
+			- height
+			- src
+			- frameborder
+			- allowfullscreen
+			- showinfo(?)
+
+La etiqueta iframe sirve para insertar otras paginas, archivos pedf... no solamente para un video de youtube.
+Se deben poner en ese caso atributos width height y src
+
+Canvas <canvas> :
+	atributos:
+	- width
+	- height
+	Toda la magia de dibujar la hace javascript
+
+Objetos <object> :
+	atributos:
+	- width
+	- height
+	- data
+	Sirve para incrustar elementos dentro del html, como applets de java, flash players o archivos PDF
+
+----------------------------------------------------------------------------------------------------------
+
+TABLAS:
+-------
+
+<table>		indica la TABLAS
+<tr>		table row (fila)
+<td>		table data (celda)(puede contener texto, imagenes, enlaces, listas, otras tablas...)
+<th>		table header - cabecera - por defecto salen en negrita y centrado
+<caption>	leyenda - debe localizarse JUSTO DESPUES de la etiqueta table
+<thead>		
+<tfoot>		
+<tbody>		
+
+***si se indica thead, tfoot y tbody, se habilita el scrolling del cuerpo independientemente de la cabecera y el pie
+	o que se imprima siempre la cabecera y el pie independientemente del cuerpo
+
+borde (sin borde de forma predeterminada):
+	en el <head> ponemos <style> table, th, td { border: 1px solid black; } </style> (o en el archivo de css, mejor)
+
+COMBINAR FILAS Y COLUMNAS:
+	- combinar columnas:
+		<th colspan="numero">texto</th>
+	- combinar filas:
+		<th rowspan="numero">texto></th>
