@@ -1,0 +1,86 @@
+----------------------------------------------------------------------------------------------------------
+----------------------------------------         CSS           -------------------------------------------
+----------------------------------------------------------------------------------------------------------
+
+presentacion 38 diapos:
+CSS hojas de estilo en cascada
+------------------------------
+
+Especificacion de CSS: CSS 2.1 (w3.org/TR/CSS21). Ya hay CSS3 pero va por modulos independientes (es un Estandar Vivo).
+Validador css: https://jigsaw.w3.org/css-validator/
+
+Enlazar css al html: 
+	<head>
+		<title>Ejemplo>/title>
+		<link rel="stylesheet" type="text/css" href="ruta/archivo.css"> //posible atributo media
+	</head>
+Rel es de relacion, se indica que es hoja de estilo (stylesheet)
+type es tipo de recurso enlazado
+Href indica el archivo con su ruta relativa
+
+Se podria poner tambien el atributo media="" indicando como valor: all | print | screen | speach
+
+Estructura de las reglas contenidas en el .css:
+	regla => selector { propiedad: valor;}
+Selector indica el/los elemento/s del html afectados
+Declaracion es el contenido entre llaves 
+Propiedad es la caracteristica que se va a modificar
+Valor es la modificacion de dicha propiedad
+
+Comentarios en css:
+	/* como en programacion */ 
+
+CSS PARA TEXTO:
+	propiedad			descripcion							ejemplo						opciones
+
+	font-family			tipo de letra						Arial						nombre fuente | generico
+	font-size			tamaño de letra						14px						xx-small|x-small|small|medium|large|x-large|xx-large|px|cm|em|%
+	font-weight			grosor								bold						normal|bold|valor
+	font-style			estilo								italic						normal|italic
+	text-align			alineacion horizontal				center						center|left|right|justify
+	vertical-align		alineacion vertical					text-top					baseline|text-top|top|middle|text-bottom|bottom|px|%|sub|super
+	text-decoration		decoracion							underline					none|underline|overline|line-through
+	text-transform		capitalizacion de letras			uppercase					none|uppercase|lowercase|capitalize
+	text-indent			sangria 1ª linea parrafo			2cm							px|cm|%
+	letter-spacing		espaciado entre letras				5px							normal|px|cm|em
+	word-spacing		espaciado entre palabras			5px							normal|px|cm|em
+	line-height			alto de lineas						150%						normal|px|%
+	direction			direccion del texto					rtl							ltf|rtl
+	text-shadow			sombreado del texto					2px 2px 8px #FF00FF       none|h-shadow v-shadow blur-radius color	
+	color				color del texto						blue|rgb(0,0,255)         nombreColor|#valorHexadecimal|rgb(r,g,b)
+
+Para indicar en un texto:
+	:first-line			para la 1ª linea del texto			p:firstline {...}
+	:first-letter		para la primera letra de un texto	p:first-letter {...}
+
+
+----------------------------------------------------------------------------------------------------------
+pdf selectores:
+
+	SELECTOR:				EJEMPLO:			DESCRIPCIÓN DEL EJEMPLO:
+
+	.class 					.importante 		Selecciona todos los elementos con class="importante" 
+	#id 					#nombre 			Selecciona el elemento con id="nombre" 
+	* (universal)			* 					Selecciona todos los elementos 
+	elemento 				p 					Selecciona todos los elementos <p> 
+	elemento,elemento 		div, p 				Selecciona todos los elementos <div> y todos los elementos <p> 
+	elemento elemento 		div p 				Selecciona todos los elementos <p> dentro de elementos <div> 
+	elemento>elemento 		div > p 			Selecciona todos los <p> cuyo padre sea un elemento <div> 
+	elemento+elemento 		div + p 			Selecciona todos los <p> que están situados inmediatamente después de un elemento <div> 
+	elemento1~elemento2 	p ~ ul 				Selecciona todos los <ul> que están precedidos por un elemento <p> 
+	[atributo] 				[target]			Selecciona todos los elementos con el atributo target 
+	[atributo=valor] 		[target="_blank"] 	Selecciona todos los elementos con el atributo target="_blank" 
+	[atributo~=valor] 		[alt~="flor"] 		Selecciona todos los elementos con un atributo alt que contenga la palabra "flor" 
+	[atributo|=valor] 		[lang|="es"] 		Selecciona todos los elementos con un atributo lang cuyo valor comience por "es" 
+	[atributo^=valor] 		a[href^="https"] 	Selecciona todos los <a> con un atributo href cuyo valor comience por "https" 
+	[atributo$=valor] 		a[href$=".pdf"] 	Selecciona todos los <a> con un atributo href cuyo valor termine con ".pdf" 
+	[atributo*=valor] 		a[href*="google"] 	Selecciona todos los <a> con un atributo href cuyo valor contenga el substring "google" 
+	:not(selector) 			:not(p) 			Selecciona todos los elementos que no sean <p> 
+
+----------------------------------------------------------------------------------------------------------
+presentacion 118 diapos:
+----------------------------------------------------------------------------------------------------------
+presentacion 9 diapos:
+----------------------------------------------------------------------------------------------------------
+
+
