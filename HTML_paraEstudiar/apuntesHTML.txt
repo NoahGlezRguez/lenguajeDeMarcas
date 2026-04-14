@@ -345,7 +345,7 @@ dentro de <form> se puede poner:
 
 ----------------------------------------------------------------------------------------------------------
 
-VALIDAICON DE PAGINAS (SERVICIO W3C): https://validator.w3.org/
+VALIDACION DE PAGINAS (SERVICIO W3C): https://validator.w3.org/
 -------------------------------------
 
 La validación puede realizarse a partir de la URL de una página web, descargando el fichero desde nuestro ordenador o pegando un trozo del código fuente.
@@ -361,6 +361,3 @@ Dentro de la etiqueta <head> introducir:
 
 Existen navegadores que aunque detectan errores saben subsanarlos de forma que muestra la pagina como deberia verse si estuviera bien hecha, pero
 si otros no lo hacen, la pagina podria verse defectuosa o no verse...
-
-----------------------------------------------------------------------------------------------------------
-
