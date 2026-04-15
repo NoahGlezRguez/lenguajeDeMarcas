@@ -1,0 +1,5 @@
+css:
+	- posicionamiento de... cajas?
+	- flex-grow->		cuanto va a crecer un elemento respecto a los demas del mismo contenedor
+						valor: nº entero (como si fuera n veces el tamaño normal?? o el tamaño restante en proporcion??)
+	- @media print??
