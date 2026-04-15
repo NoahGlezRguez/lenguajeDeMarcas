@@ -53,7 +53,77 @@ Para indicar en un texto:
 	:first-line			para la 1ª linea del texto			p:firstline {...}
 	:first-letter		para la primera letra de un texto	p:first-letter {...}
 
+CSS ENLACES:
+	pseudo-clases		descripcion							ejemplo
 
+	:link				enlaces nunca visitados				a:link {color: black;}
+	:visited			enlaces min una vez visitados		a:visited {...}
+	:hover (*)			al situar raton por encima sn click a:hover {...}
+	:active (*)			mientras click izq encima			a:active {...}
+	:focus (*)			cuando el enlace tiene el foco		a:focur {...}
+
+	(*) --->>> 	validos para otros elementos html, no solo enlaces!!
+	Notas extra:
+		el hover debe definirse despues de a:link y a:visited para ser efectivo
+		el active debe ir despues del hover
+
+CSS LISTAS:
+	propiedad			descripcion							posibles valores
+
+	list-style-type		el tipo de marcador de listado		for ul: none | circle | square | disc
+															for ol: none | upper-roman | lower-roman | upper-alpha | lower-alpha | decimal	
+	list-style-image	una imagen como marcador de listado	none | url --->>> ejemplo: list-style-image: url(./myImg.png);
+
+CSS TABLAS:
+
+	pseudo-clases				descripcion							ejemplo
+
+	:nth-child(even | odd) (*)	afecta a las filas (tr)				tr:nth-child(even) {background-color: #999999;}
+								columnas td, pares | impares		tr:nth-child(odd) {background-color: #f2f2f2;}
+								util para hacer tablas ralladas
+	:nth-child(n) (*)			enesimo hijo						tr:nth-child {...}
+	:first-child (*)			primer hijo							tr:first-child {...}
+	:last-child (*)				ultimo hijo							tr:last-child {...}
+
+	(*)  ---->>>> validos para otros elementos de html, no solo tablas
+
+CSS FORMULARIOS:
+	- selector de atributos						descripcion							ejemplo
+
+	input[type="tipoQueQuieraDeLosPosibles]		afecta al tipo indicando			input[type="..."] {...}
+
+	- pseudoclases		descripcion							ejemplo
+	
+	:checked			los que estan ya chequeados			inpud:checked {...}
+	:disabled			"									"
+	:enabled			"									"
+	:required			"									"
+	:optional			"									"
+	:read-only			"									"
+	:read-write			"									"
+
+----------------------------------------------------------------------------------------------------------
+Unidades en CSS:
+----------------
+ABSOLUTAS:
+	in, pulgadas, cm, mm, pt (puntos), pc (pica), pixel
+RELATIVAS:
+	em (M), ex (x), ch (0) (no recomendado), % (% del tamaño que ocuparia de forma habitual), rem (root em),
+	vw (ancho de la ventana 1%), vh (altura de la ventana 1%), vmin (el tamaño mas pequeño entre vw y vh),
+	vmax (el tamaño mas grande entre vw y vh).
+
+	Recomendacion: em y rem. vh y vw.
+----------------------------------------------------------------------------------------------------------
+COLORES:
+	hexadecimal:					con # delante
+	rgb:							rgb(n,n,n)
+	porcentajes rgb:				font-color:rgb(n%,n%,n%)
+	rgb funcion y transparencia: 	rgba(n%,n%,n%,n%)
+	nombre:							pues eso
+	hsl:							tono, saturacion, claridad
+	hsla:							hsl + transparencia
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------
 pdf selectores:
 
@@ -78,9 +148,305 @@ pdf selectores:
 	:not(selector) 			:not(p) 			Selecciona todos los elementos que no sean <p> 
 
 ----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
 presentacion 118 diapos:
+
+Modelo de cajas:
+	Partes de la caja:
+		- contenido
+		- relleno
+		- borde
+		- imagen de fondo
+		- color de fondo
+		- margen
+
+Anchura y altura
+	anchura -> width, en px o % -> tambien hay min-width y max-width
+	altura -> height, en px o % -> tambien hay min-height y max-height
+
+Margen
+	Es la distancia desde la propia caja hacia los demas elementos
+	- margin-top, margin-left, margin-right, margin-bottom
+	- si no se especifica, pondra el mismo margen en todos los sentidos
+	- se puede poner -> auto. esto hace que lo centre de forma automatica respecto a su contenedor
+
+Relleno
+	Padding. Es la distancia entre el contenido de la caja y los bordes internos de la caja.
+	- Si no se especifica direccion, sera la misma para todos los sentidos.
+	- padding-top, padding-bottom, padding-right, padding-left
+
+Bordes
+	de los elementos
+	- propiedades tamaño: 		border-width
+								border-left-width
+								border-right-width
+								border-top-width
+								border-bottom-width
+	- posibles valores: 		<n px | em> | thin | medium | thick
+	- propiedades de color:		border-color
+								border-top-color
+								border-bottom-color
+								border-right-color
+								border-left-color
+	- valores:					<color> | transparent
+	- propiedades de estilo:	border-style
+								border-top-style
+								border-bottom-style
+								border-right-style
+								border-left-style
+	- valores:					none | hidden | dotted | dashed | solid | double | groove | ridge | inset | outset
+	- propiedades de radio:		border-radius
+								border-top-left-radius
+								border-top-right-radius
+								border-bottom-left-radius
+								border-bottom-right-radius
+	- valores:					<nº px | em> | % | initial
+
+	OPCION CON BORDE: se puede poner border: width style color -> asi, de forma compacta
+
+----------------------------------------------------------------------------------------------------------
+
+Color de fondo
+	Puede ser una imagen o un color liso
+	- background-color: color | transparent
+	- background-image: url("ruta") | none
+	- background-repeat: repeat | repeat-x | repeat-y | no-repeat
+	- background-position: (x | <n%> | left | center | right) (y | <n%> | left | center | right)
+	- background-attachment: scroll | fixed
+
+Propiedad display: inline (en linea) | block (en bloque) | flex (flexbox) | none | ... --->>> cambia la forma en la que se visualiza un elemento html
+
+Propiedad visibility: visible | hidden
+----------------------------------------------------------------------------------------------------------
+Posicionamiento.
+Cinco modelos diferentes para posicionar una caja --> mediante la propiedad position:
+	- normal o estático -> solo en linea o en bloque
+	- relativo -> top, bottom, left, right -> ejemplo: position: relative; top: 8em;
+					se "reserva" el espacio original donde estaria el elemento
+	- absoluto -> igual que relativo pero no se "reserva" el espacio original dle elemento
+	- fijo
+	- flotante
+
+Propiedades de css para posicionar los elementos:
+	- display
+	- visibility
+	- overflow
+	- z-index
+display y visibility permiten ocualtar cualquier elemento de la pagina y se suelen usar ocn js para crear efectos
+dinamicos como mostrar y ocultar determinados textos o imaggenes cuando el usuario pincha sobre ellos
+
+Display 	-> permite ocultar completamente un elemento, y cuando desaparece el resto de elementos ocupan su lugar.
+				valores: inline | block | none | list-item | run-in | inline-block | table | inline-table | table-row-group | 
+						 table-header-group | table-footer-group | table-row | table-column-group | table-column | table-cell | 
+						 table-caption | inherit
+				valores mas utilizados: inline, block, none (lo oculta y desaparece)
+Visibility 	-> la oculta pero los elementos no ocupan su lugar, no cambian de posicion ya que sigue ocupando su sitio.
+				valores: visible | hidden | collapse | inherit
+
+Relacion entre display, float y position
+	Si se usan estas tres sobre la misma caja, su interpretacion es la siguiente:
+	1.-	display es none -> se desaparece
+	2.-	position es absolute/fixed -> se considera que float vale none y display block, y la posicion se determina por top, right,
+		bottom y left.
+	3.-	si float no es none, la caja es flotante y el display sirve para elementos de line ay de bloque
+
+Propiedad overflow:
+	Es para cuando no tiene suficiente espacio y se desborda.
+	Normalmente esto pasa cuando se establece width y height. O lineas muy largas dentro de un pre.
+	Valores: visible | hidden | scroll | auto | inherit
+		Visible-> no se corta, se muestra sobresaliendo (este es el comportamiento por defecto)
+		Hidden-> lo sobrante se oculta, solo se ve lo que esta dentro del contenedor
+		Scroll-> lo mismo que hidden pero si se scrollea se puede ver el resto
+		Auto-> depende del navegador, pero normalmente es como scroll
+
+z-index
+	Cuando se solapan cajas, z-index permite controlar la visibilidad de forma tridimensiona, poniendo unas delante o detras 
+	de otras. Asi, se crean diferentes niveles o capas.
+	Valores: auto | <nº> | inherit
+	Cuando el nº es mas alto en valor, mas cerca del usuario se muestra.
+	Solo se puede usar cuando los elementos estan posicionados... si no, no hace nada.
+----------------------------------------------------------------------------------------------------------
+
+Diseño responsive:
+	se adapta al tamaño de la pantalla del dispositivo. Para eso, se recomienda no hacer tablas.
+	Tambien se recomienda usar medidas relativas.
+	para decir que un html es responsive se pone:
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+Media queries:
+	son reglas css3 para adaptar el contenido a cualquier dispositivo.
+	indicaremos en las reglas de @media qué propiedades tendrá el diseño de la pagina web que se mostrara.
+	Si por ejemplo dijeramos que para mostrarse la pantalla debiera tener como maximo 500px de ancho y que 
+	de lo contrario no se mostrara, sería:
+		@media screen and (max-width:500px) {
+			header, nav, footer {
+				height: 50px;
+				width: 100%;
+			}
+		}
+
+Propiedades:
+	- device-height		definir la altura que debe tener un dispositivo, y puede tomar valores minimos y maximos:
+						max-device-height, min-device-height
+	- device-width		igual que el anterior pero con la anchura
+	- height			lo mismo que device-height pero con pantalla.
+
+Si por ejemplo queremos vincular una hoja de estilo css dependiendo de las dimensiones de la pantalla:
+	<link rel="stylesheet" media="screen and (max-width: 800px) and (min-height: 300px)" href="css/style1.css"/>
+	<link rel="stylesheet" media="screen and (min-width: 1200)" href="css/style2.css"/>
+	<link rel="stylesheet" media="screen and (max-width: 1600)" href="css/style3.css"/>
+
+En css, ejemplos media con diferentes valores:
+	@media (max-width: 500px) {...}
+	@media (max-width:500px) and (orientation: landscape) {...}
+	@media screen (max-width:500px) and (orientation: landscape) {...}
+	@media (max-width:500px), handheld and (orientation: landscape) {...}
+
+----------------------------------------------------------------------------------------------------------
+FLEXBOX:
+-------
+
+Es importante: todos los contenedores que van con flexbox deben estar contenidos en un contenedor adicional.
+Usamos display con valor flex.
+Dentro del contenedor al que se le aplica el display flex, pueden ir uno o mas contenedores flex
+
+Propiedades:
+	- flex-direction->	especifica la direccion de los elementos flex dentro del contenedor
+						posibles valores: row | column | row-reverse | column-reverse
+	- flex-wrap->		indica si deben cambiar de linea o no si no queda espacio
+						valores: no-wrap | wrap | wrap-reverse
+						* si es no-wrap y no hay espacio, los elementos adaptan su tamaño para caber.
+						* si es wrap, y no caben, movera a la siguiente linea los que no quepan
+						* por defecto es no-wrap
+	-flex-flow->		forma abreviada de decir direction y wrap a la vez
+						opciones:
+							flex-flow: row no-wrap;
+							flex-flow: row wrap;
+							flex-flow: column no-wrap;
+							flex-flow: column wrap;
+							...
+	- justify-content->	alinear horizontalmente los elementos flex dentro del contenedor cuando no ocupan todo 
+						el espacio disponible
+						valores: flex-start | flex-end | center | space-between | space-around
+	- align-items->		lo mismo que justify-content pero en vertical.
+						valores: stretch | flex-start | flex-end | center | baseline
+	- align-content->	igual que align-items peeero con las lineas flex, cuando hay mas de una hace wrap
+	- align-self->		para que un solo elemento se alinee independientemente de los demas
+						valores: stretch | flex-start | flex-end | center | baseline
+
+	- order->			orden de items con respecto del resto de items dentro del mismo contenedor
+						por defecto comienza en 0. se permiten valores negativos.
+	- flex-basis->		especifica el tamaño inicial del elemento (width o height dependiendo de flex-direction)
+						valores: auto | px | %
+						si esta en auto, se ajustara al contenido.
+						el tamaño final dependera de las otras propiedades especificadas
+	- flex-grow->		cuanto va a crecer un elemento respecto a los demas del mismo contenedor
+						valor: nº entero (como si fuera n veces el tamaño normal?? o el tamaño restante en proporcion??)
+	- flex-shrink->		lo mismo que grow pero decreciendo
+	- flex->			forma abreviada de indicar de una sola tirada: flex-grow, flex-shrink y flex-basis
+
+
+Para que el css relativo a flexbox sea compatible con todos los navegadores hay que duplicar todas las propiedades
+flex utilizando el prefijo -webkit-. De momento esto es necesario para Safari, pero si queremos que sea compatible
+con versiones antiguas de los navegadores, convendría hacer esto.
+
+----------------------------------------------------------------------------------------------------------
+Sobre el diseño web adaptativo, normalmente se diseña primero para movil y luego se adaptan a los demas, para que en el 
+movil sea mas rapido.
+Con @media, se puede indicar. Ejemplo:
+	· @media all and (max-width: 500px) and (orientation: portrait)
+	· @media all and (min-width: 800px)
+	· @media all and (orientation: landscape)
+
+		- max-width | min-width
+		- orientation: portrait | landscape
+		- and | or
+
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------
 presentacion 9 diapos:
+Formulario CSS:
+
+Aplicando las propiedades del modelo de caja:
+	
+	para definir la anchura del input usariamos la propiedad width:
+		input {
+			width: 100%;
+		}
+
+	Input se puede aplicar a todos pero se pueden indicar algunos mas en concreto:
+		input[type="text"] {
+			width: 120%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			border: 2px solid grey;
+			border-radius: 4px;
+			background-color: #3CBC8D;
+			color: white;
+		}
+
+	Si por ejemplo queremos que al pasar por encima al hacer click cambie el borde:
+		
+		input:focus {
+			background-color: lightblue;
+		}
+		
+		input {
+			border: 3px solid #555;
+		}
+
+	Para añadir una imagen o icono dentro del elemento de entrada, se usara background-image y se posicionara
+	con la propiedad background-position.
+	Para insertar la imagen, se agrega un gran relleno a la izquierda para reservar espacio para el icono:
+		
+		input[type=text] {
+			background-color: white;
+			background-image: url('searchicon.png');
+			background-position: 10px 10px;
+			background-repeat: no-repeat;
+			padding-left: 40px;
+		}
+	
+	Definimos la propiedad resize para permitir o no hacer más grande el textarea
+		
+		textarea {
+			width: 100%;
+			height: 150px;
+			padding: 12px 20px;
+			box-sizing: border-box;
+			border: 2px solid #ccc;
+			border-radius: 4px;
+			background-color: #f8f8f8;
+			resize: none;
+		}
+
+	Select
+	Ejemplo:
+		select {
+			width: 100%;
+			padding: 16px 20px;
+			border: none;
+			border-radius: 4px;
+			background-color: #f1f1f1;
+		}
+
+	Input button
+	Ejemplos:
+		input[type=button], input[type=submit], input[type=reset] {
+			background-color: #04AA6D;
+			border: none;
+			color: white;
+			padding: 16px 32px;
+			text-decoration: none;
+			margin: 4px 2px;
+			cursor: pointer;
+		}
+
+	Form adaptable:
+	Se debe insertar una @media query para que los formularios respondan. (??)
+	Por ejemplo, será común que el label y los inputs de entrada estén uno debajo del otro, en lugar de uno al lado del otro
 ----------------------------------------------------------------------------------------------------------
 
 
