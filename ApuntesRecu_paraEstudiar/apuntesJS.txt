@@ -2,8 +2,390 @@
 javascript-
 -----------
 
-presentacion 20 diapos
+---------------------------------------------------------------------------------------------------------------------
+presentacion 20 diapos:
+javascript es un lenguaje usado para crear webs dinamicas. mas bien para el cliente que pal servidor.
+
+es interpretado, no se compila.
+
+es debilmente tipado e incluye poo
+
+usos:
+	- cambiar contenido html
+	- cambiar valores de atributos de html
+	- cambiar estilo css del html
+	- ocultar/mostrar elementos html 
+
+formas de incluir js en un html:
+	- con la etiqueta <script type="text/javascript"> codigo de js aqui </script>
+	- definirlo en un archivo .js y enlazarlo al html con una etiqueta dentro del body:
+			<script type="text/javascript" src="ruta/archivo.js"></script>
+	- incluir contenido de javascript directamente en un elemento del html:
+			<p onclick="alert('holaMundo!');"> Mensaje </p>
+
+4 formas de mostrar datos usando js:
+	1.- window.alert() pero se puede poner alert() a secas
+	2.- console.log() que mostrara en la consola DEL NAVEGADOR
+	3.- document.write(). Se pueden incluir nuevas etiquetas html en el texto a escribir.
+	4.- innerHTML. Para acceder a un elemento se usa la funcion document.getElementById(idDelElemento).
+		Esta propiedad define el contenido del elemento, que puede contener texto u otras etiquetas HTML.
+
+Js es sensible a mayusculas. Estan los literales y estan las variables. Para las variables no se indica el tipo. Se pone var.
+Pueden ser locales o globales.
+
+los comentarios: /* */ o //
+
+el primer caracter de un id: letra, _ o $, y camelCase.
+
+los tipos son dinamicos, asi que pueden cambiar.
+
+como operadores, a parte de lo shabituales, tenemos: typeof (devuelve el tipo) y instanceof (devuelve true si es del tipo de un tipo de objeto)
+
+estructuras de control, if-else, while, switch, do-while y for igual que en java. tambien se puede usar break y continue.
+
+para hacer funciones:
+	function nomFt (params) {
+		codigo
+	}
+
+	hay funciones ya creadas:
+		str.indexOf(str)
+		str.substring(ini, fin)
+		str.replace(subtr, reemplazo)
+		str.toUpperCase()
+		str.charAt(i)
+		str.spli("caracter")
+		str.lastIndexOf(str)
+		str.substr(ini, len)
+		str.toLowerCase()
+		
+		num.toString()
+		parseFloat(str)
+		parseInt(n)
+		isNaN(n)
+
+Se puede buscar mas funciones en www.w3schools.com/js/js
+
+Los arrays se pueden crear directamente asignando valores con corchetes o justo antes del corchete poner new Array
+
+Cada instruccion debe terminar por ;
+
+Respecto a los arrays, hay funciones:
+	ar.pop()		devuelve el elemento eliminado (elimina el ultimo del array)
+	ar.push(str)	devuelve la nueva longitud (añade el elemento)
+	ar.sort()		ordena alfabeticamente (no va bien con numeros). se soluciona poniendo en el () una funcion: function(a, b){return b-a}
+	ar.reverse()	invierte los elementos 
+	ar.splice(n1, n2, elemento, elemento,...) --->>> n1 es donde se inserta, n2 indica cuantos elementos se deben eliminar, el resto son los
+					elementos que se insertaran. devuelve una matriz con los elementos eliminados. si no hay elementos indicados, no se agrega nada.
+	ar.concat()		nuevo array concatenando dos arrays (o mas)
+
+Los Array son objetos en js.
+
+Ejemplo objeto:
+	function Coche(marca, modelo, precio) {
+		this.marca = marca;
+		this.modelo = modelo;
+		this.precio = precio;
+
+		this.toString = function() {
+			return marca + " " + modelo + " " + precio;
+		};
+	}
+
+	var coche1 = new Coche(str, str, num);
+
+	alert(coche1.toString());
+
+
+---------------------------------------------------------------------------------------------------------------------
 presentacion 7 diapos
+
+Arrays en javascript:
+	- pueden contener cualquier tipo basico y su longitud cambia dinamicamente.
+	- para crear arrays bidimensionales, tenemos que crear uno unidimensional y al recorrerlo, asignar a cada posicion
+		otro array unidimensional
+
+Propiedades:
+	- lenght
+	- prototype -> string que nos permite asignar nuevas propiedades al objeto
+Metodos:
+	- join()	
+	- reverse()	->	organizar el orden de los elementos en la matriz
+	- sort()	->	organizar los elementos de la matriz de acuerdo con la orden lexicografica
+
+Si se crea con new Array es () pero si es sin new Array es []
+
+se accede a los elementos como en java
+
+se puede almacenar elementos de diferente tipo en cada posicion del array
+
+ej:
+	- var x = myCars.length
+	- var y = myCars.indexOf("Volvo")
+ej para probar en un html:
+	<p id="demo"></p>
+	<script>
+	var cars = ["Saab", "Volvo", "BMW"];
+	document.getElementById("demo").innerHTML = cars;
+	</script>
+
+valueOf() devuelve el array como un string
+
+si se asigna un elemento a la posicion ar.lenght del array se esta añadiendo un elemento al final
+
+metodo: delete ar[0]; //cambia el primer elemento a undefined
+
+---------------------------------------------------------------------------------------------------------------------
 presentacion 17 diapos
+
+DOM -> Modelo de Datos del Documento. Para que una web se vea el CRP (Critical Rendering Path).
+Funciones clave del DOM:
+	- interactividad del usuario
+	- actualizacion dinamica del contenido
+	- manipulacion de estilos y diseño
+	- validaciuon de formularios
+	- manejo de eventos
+	- creacion de elementos dinamicamente
+	- animaciones y transiciones
+
+HTML DOM es un estandar que define como obtener, modificar, añadir o eliminar elementos HTML.
+El dom explica como se organiza html (elementos etc), que es parecido a xml.
+
+En js necesitamos seleccionar elementos dentro de nuestro html, y lo haremos a traves del id o del class:
+	.getElementById(id)
+	.getElementsByCalssName(nomclass)
+	.getElementsByName(name)
+	.getElementsByTagName(tag)
+
+Hay dos que son mas modernos:
+	.querySelector(selector)
+	.querySelectorAll(selector)
+
+	selector (como en css)
+			-> ej: 	"#abajo"
+					".main .info"
+
+metodo							qué devuelve
+
+.nodeName						nombre del nodo 
+.textContent					contenido de texto del elemento (asignar para modificar)					
+.innerHTML						contenido html del elemento (asignar para modificar)
+.outerHTML						igual que el anterior pero incluyendo el propio html del elemento, no solo su contenido
+.setHTML(htmlCode, options)		insertar html, pero sanitizando la entrada de datos
+
+Navegacion entre nodos de html:
+	document.body
+	parentNode
+	childNodes[idx]
+	firstChild
+	lastChild
+	nextSibling
+	previousSibling
+	nodeName
+	nodeValue
+	nodeType -> 1: elemento, 2: atributo, 3: texto, 8: comentario, 9: documento
+	tagName
+
+Operaciones:
+	document.createElement("nomEtiqueta");
+	document.createTextNode("Texto");
+	document.appendChild(nomTextNode);
+	document.body.appendChild(element)
+
+	eliminar nodo:
+		var parrafo = document.createElement("p");
+		parrafo.parentNode.removeChild(parrafo);
+	
+	reemplazar nodo:
+		var nuevoParrafo = document.createElement("p");
+		var nuevoContenido = document.createTextNode("Nuevo contenido");
+		nuevoParrafo.appendChild(nuevoContenido);
+		var parrafoExistente = document.getElementById("provisional");
+		parrafoExistente.parentNode.replaceChild(nuevoParrafo, parrafoExistente);
+	
+Acceso a atributos html:
+	atributos comunes:
+		ej: var enlace = document.getElementById("enlace");
+			alert(enlace.href);
+			Accedes al atributo href de un enlace usando la propiedad correspondiente en el nodo
+	atributo class:
+		ej:	var parrafo = document.getElementById("parrafo");
+			alert(parrafo.className);
+			Para el atributo class, ya que "class" está reservado en JavaScript, se utiliza className en lugar de class para acceder a él.
+
+Acceso a propiedades de css:
+	propiedad individual:
+		ej:	var imagen = document.getElementById("imagen");
+			alert(imagen.style.margin);
+			Para acceder a una propiedad CSS específica, usas la propiedad style del nodo.
+	transformacion de nombres:
+		La transformación de nombres de propiedades CSS compuestas implica convertir los guiones medios en
+		notación de camelCase. Por ejemplo:
+			alert(imagen.style.fontWeight); // muestra el valor de "font-weight"
+		Es importante destacar que al usar style, solo obtienes las propiedades CSS que han sido establecidas en línea o aplicadas
+		directamente al elemento. Si la propiedad CSS se define en una hoja de estilo externa o interna, o si se hereda de otro elemento, no
+		se reflejará directamente en la propiedad style. En tales casos, se pueden utilizar métodos como getComputedStyle para obtener los
+		valores computados.
+
+---------------------------------------------------------------------------------------------------------------------
+presentaicon 4 diapos
+
+Eventos DOM:
+
+Raton:
+	- onclick
+	- ondblclick
+	- onmousedown
+	- onmouseup
+	- onmouseover
+	- onmouseout
+	- onmousemove
+	Objeto MouseEvent:
+		- clientX
+		- clientY
+
+	Cuando ocurre el evento se pueden enviar parametros a la funcion a ejecutar.
+	Ejemplos:
+		<p onclick=“cambiarTexto();”>Un texto cualquiera</p>
+		<p onclick=“cambiarTexto(“Otro texto”);”>Un texto cualquiera</p>
+		<p onclick=“cambiarTexto(this);”>Un texto cualquiera</p>
+		<p onclick=“cambiarTexto(this, event);”>Un texto cualquiera</p>
+		<p onclick=“cambiarTexto(event);”>Un texto cualquiera</p>
+	this ->		objeto sobre el cual ha ocurrido el evento. si se envia eso como parametro se puede acceder a sus propiedades
+				para modificarlas
+	event ->	objeto del evento ocurrido. tiene la propiedad type que indica que evento es el que ha ocurrido. MouseEvent y KeyboardEvent 
+				tienen ademas otras propiedades
+
+Teclado:
+	- onkeydown
+	- onkeypressed
+	- onkeyup
+	Objeto KeyboardEvent:
+		- key
+		- keyCode
+		- altKey
+		- ctrlKey
+		- shiftKey
+
+Formularios:
+	- onfocus
+	- onblur
+	- onchange
+
+Otros:
+	- onload
+	- onscroll
+	- onresize
+
+Manejadores de evento:
+	- objeto.addEventListener(evento, funcion)
+	- objeto.removeEventListener(evento, funcion)
+	Ejemplo (dos formas de indicar la funcion a ejecutar):
+
+		document.getElementById( “id” ).addEventListener( “click”, funcionX ); //se quita el prefijo on- al nombre del evento
+		
+		function funcionX() {
+			alert(“Has hecho click”);
+		}
+
+		window.addEventListener("resize", function(){
+			alert(“Has cambiado el tamaño de la ventana”);
+		}); 
+
+---------------------------------------------------------------------------------------------------------------------
 presentacion 8 diapos
+
+javascript y formularios:
+
+Acceder al formulario y sus elementos:
+	- a traves de su atributo name
+	- a traves de su indice
+	Ejemplo:
+		codigo html:
+			<form name=“ejemploForm”>
+				<textarea name=“texto”>
+					Texto de ejemplo
+				</textarea>
+			</form>
+		js:
+			document.forms[0][“texto”]
+			document.forms[0][0]
+			document.ejemploForm[“texto”]
+			document.ejemploForm[0]
+
+Obtener / modificar valores de los formularios
+	- propiedad value (el cual tienen todos los elementos de form)
+		Ejemplo:
+			var nombre = document.forms[0]["nombre"].value;
+			<form name="datosForm">
+				<label for="nombre">Nombre:</label><br/>
+				<input type="text" name="nombre" id="nombre"
+				placeholder="Introduce nombre"/><br/>
+				...
+			</form>
+	- propiedad chekced (radio y checkbox)
+		Ejemplo:
+			var radios = document.forms[0]["genero"];
+			var genero = “”;
+			for(var i=0; i<radios.length; i++) {
+				if(radios[i].checked) {
+					genero = radios[i].value;
+					break;
+				}
+			}
+	- propiedad selectedIndex y options (para select)
+		Ejemplo:
+			var seleccion= document.forms[0][“seleccion"];
+			if(seleccion.selectedIndex == -1)
+				alert(“No has seleccionado nada”);
+			else
+				alert(seleccion.options[seleccion.selectedIndex].value);
+
+Enviar los datos del formulario:
+	- method="GET": se envian a traves de la url (visibles)
+	- method="POST": se envian ocultos
+
+	Se envian alla donde indique la propiedad 'action' del form. Normalmente sera un servidor.
+	Con get se puede enviar a otra pagina html ya que va con la propia url
+
+	Para obtener los parametros de la url se utilizan las siguientes funciones:
+		var paramString = window.location.search.substr(1);
+			Devuelve el listado de parametros de la url incluyendo el ?, por eso el substr, para quitar la ?
+		var parametros = new URLSearchParams(paramString);
+			Descompone el string en parametros identificandoloes por su nombre (par nombre-valor)
+		alert(parametros.get("nombre"));
+			La funcion get con el nombre para leer el parametro
+
+
+---------------------------------------------------------------------------------------------------------------------
 presentacion 24 diapos
+
+JS Y FORMULARIOS
+
+El Evento de Envío (submit)
+	Es el momento más importante.
+	- 	Interceptar el envío: escuchar el evento 'submit'.
+	- 	event.preventDefault(): Se usa para evitar que el formulario se envíe automáticamente y la página se recargue,
+		y asi validar los datos primero con JS.
+
+Validación de Datos
+	- 	HTML5: Puedes usar atributos como required, minlength, maxlength, pattern y type="email" directamente en el HTML.
+	-	JavaScript: Te permite hacer validaciones más complejas (ej. comprobar si una contraseña es fuerte) antes de llamar
+		manualmente a form.submit().
+
+Radio Buttons y Checkboxes
+	-	Radio Buttons: Se usan para elegir una sola opción de un grupo (deben compartir el mismo name). Para saber cuál
+		está marcado, recorres el grupo y buscas el que tenga .checked === true.
+	- 	Checkboxes: Para opciones múltiples.
+	- 	Tip importante: Si un checkbox no está marcado, no se envía en los datos del formulario.
+	- 	Para obtener los valores de varios marcados, usa document.querySelectorAll('input[name="lenguaje"]:checked').
+
+Elemento Select (Desplegables)
+	- 	Valor seleccionado: selectElement.value te da el valor de la opción elegida.
+	- 	Selección múltiple: Si el HTML tiene el atributo multiple, puedes obtener un array de las opciones elegidas filtrando
+		aquellas donde option.selected sea verdadero.
+
+Eventos de interacción: input vs change
+	- 	input: Se dispara en tiempo real mientras el usuario escribe o cambia algo (ideal para búsquedas dinámicas).
+	- 	change: Solo se dispara cuando el usuario termina de cambiar el valor y quita el foco del campo (hace clic fuera).
+
