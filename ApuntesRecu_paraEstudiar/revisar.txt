@@ -3,3 +3,9 @@ css:
 	- flex-grow->		cuanto va a crecer un elemento respecto a los demas del mismo contenedor
 						valor: nº entero (como si fuera n veces el tamaño normal?? o el tamaño restante en proporcion??)
 	- @media print??
+
+js:
+	- metodo join() de los arrays?? que hace
+	- metodos shift() y unshift()
+	- metodos pop y push
+	- .setHTML(htmlCode, options)		insertar html, pero sanitizando la entrada de datos (¿wtf que significa esto?)
