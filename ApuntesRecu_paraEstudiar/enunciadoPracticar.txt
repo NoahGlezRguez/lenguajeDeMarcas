@@ -1,0 +1,98 @@
+Enunciado: Plataforma Interactiva "CineWeb"
+Objetivo: Desarrollar una "Landing Page" (página de aterrizaje) de una sola página para un cine local. Deberás estructurar el contenido con HTML5 semántico, darle estilo visual
+y responsivo con CSS (incluyendo Flexbox y Media Queries), y añadir interactividad y validación de datos con JavaScript.
+
+Parte 1: Estructura HTML (Semántica y Contenido)
+Crea el archivo index.html y aplica los siguientes requisitos basados en tus apuntes:
+
+Estructura base: Incluye las etiquetas fundamentales (<!DOCTYPE HTML>, <head>, <meta charset>, <title>, etc.). Asegúrate de enlazar tus archivos CSS y JS de forma externa.
+
+Estructura semántica: - Un <header> que contenga un <nav> con una lista desordenada (<ul>) de enlaces internos (ej. <a href="#cartelera">) a las distintas secciones de la página.
+
+Un <main> que envuelva el contenido principal.
+
+Varias secciones (<section>) identificadas con el atributo id: "Cartelera", "Horarios" y "Reservas".
+
+Un <footer> con datos de contacto (puedes usar la etiqueta <address>).
+
+Contenido Multimedia e Imágenes: - En la sección "Cartelera", añade al menos 3 imágenes de películas (<img>) usando atributos como alt, width y height.
+
+Añade un trailer promocional usando un vídeo de YouTube a través de un <iframe>, o usa la etiqueta <video> (con controls y poster).
+
+Tablas y Listas:
+
+En la sección "Horarios", crea una tabla (<table>, <thead>, <tbody>, <tr>, <th>, <td>) para mostrar los pases. Usa colspan o rowspan en alguna celda para combinar horarios.
+
+Usa una lista de definiciones (<dl>, <dt>, <dd>) en un bloque <aside> para explicar brevemente géneros de cine (ej. Acción, Comedia).
+
+Formulario de Reservas:
+
+Crea un <form> con diversos campos: un input[type="text"] para el nombre, un select vacío (que rellenaremos con JS) para elegir la película, input[type="radio"] para el tipo de
+butaca (Normal/VIP), y un input[type="checkbox"] para aceptar las políticas. Incluye un botón de <input type="submit"> o <button>.
+
+Parte 2: Estilos con CSS (Diseño y Responsividad)
+Crea el archivo style.css y maqueta la página aplicando lo siguiente:
+
+Selectores y Box Model:
+
+Usa selectores de etiqueta, clase (.class), e identificador (#id).
+
+Define el margin, padding y border de tus elementos principales. Usa unidades relativas (em, rem, %) donde sea posible en lugar de px.
+
+Posicionamiento y Visualización:
+
+Fija el menú de navegación en la parte superior al hacer scroll usando position: fixed y ajusta el z-index para que quede por encima del resto de elementos.
+
+Oculta inicialmente un elemento (por ejemplo, un mensaje de promoción) usando display: none o visibility: hidden.
+
+Flexbox:
+
+Usa display: flex en la sección de "Cartelera" para que las imágenes de las películas se alineen en fila (flex-direction: row) y utiliza justify-content para centrarlas o espaciarlas.
+
+Pseudo-clases y Estilos Específicos:
+
+Haz que la tabla tenga filas rayadas usando la pseudo-clase :nth-child(even) o odd.
+
+Modifica el aspecto de los enlaces y botones cuando el usuario pasa el ratón por encima utilizando :hover.
+
+Usa selectores de atributo (ej. input[type="text"]) para estilizar los campos del formulario sin afectar a los demás.
+
+Diseño Responsivo (Media Queries):
+
+Incluye al menos una regla @media screen and (max-width: 600px) para dispositivos móviles. En ella, cambia la cartelera de flex-direction: row a column, y ajusta tamaños de fuente.
+
+Parte 3: Interactividad con JavaScript (DOM y Eventos)
+Crea el archivo script.js y dale vida a la web:
+
+Arrays y Objetos:
+
+Crea un Array que contenga Objetos. Cada objeto será una película con sus propiedades (ej. titulo, precio).
+
+Manipulación del DOM (Creación dinámica):
+
+Usa un bucle for para recorrer el array de películas y, por cada una, utiliza document.createElement("option") y appendChild para añadirlas dinámicamente al desplegable (<select>)
+de tu formulario de reservas.
+
+Eventos (Interactividad):
+
+Selecciona la tabla de horarios usando document.getElementById o document.querySelector. Crea un botón encima de ella y añádele un evento (addEventListener("click", ...) o atributo
+onclick) que intercambie la propiedad CSS style.display de la tabla entre none y block (para mostrarla y ocultarla alternativamente).
+
+Añade un evento onmouseover a las imágenes de las películas para que, al pasar el ratón, se modifique el textContent o innerHTML de una capa (<div> o <p>) vacía que sirva como
+"Caja de información", mostrando el título de la película enfocada.
+
+Validación de Formularios:
+
+Intercepta el envío del formulario. Usa event.preventDefault() en el evento submit (o al hacer clic en el botón de enviar).
+
+Valida que el nombre (leyendo .value) no esté vacío y que el checkbox de términos (.checked) sea verdadero.
+
+Si la validación falla, utiliza el DOM (createElement, createTextNode, appendChild) para insertar un mensaje de error en color rojo (style.color = "red") debajo del formulario.
+
+¿Por qué este ejercicio?
+HTML: Practicarás formularios complejos, multimedia, tablas combinadas, semántica de HTML5 y enlaces internos.
+
+CSS: Te obligará a pensar en Flexbox, aplicar el modelo de cajas, lidiar con posicionamientos fijos y hacer que la web se rompa y se adapte mediante Media Queries.
+
+JS: Cubre la creación de elementos DOM desde cero a partir de estructuras de datos (objetos/arrays), el cambio de propiedades CSS en tiempo real, el manejo de eventos y la intercepción
+de formularios; tal como dictan tus apuntes.
