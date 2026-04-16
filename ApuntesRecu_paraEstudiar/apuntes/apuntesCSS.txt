@@ -18,7 +18,7 @@ Rel es de relacion, se indica que es hoja de estilo (stylesheet)
 type es tipo de recurso enlazado
 Href indica el archivo con su ruta relativa
 
-Se podria poner tambien el atributo media="" indicando como valor: all | print | screen | speach
+Se podria poner tambien el atributo media="" indicando como valor: all | print | screen | speech
 
 Estructura de las reglas contenidas en el .css:
 	regla => selector { propiedad: valor;}
