@@ -6,7 +6,7 @@
 	<meta name="autor" content="Noah G.R.">
 	<meta name="contenido" content="ejercicioDeEstudio">
 	<meta name="subject" content="LLMM_Recuperacion">
-	<title>Cines Noah</title>
+	<title>Inicio sesión</title>
 	<link rel="stylesheet" type="text/css" href="estilo.css">
 </head>
 <body class="web">
@@ -37,12 +37,29 @@
 	</header>	
 
 	<main>
-		
+		<form id="reg" name="reg" action="registro.html" method="GET">
+			<label for="registro">Registrar nuevo usuario</label>
+			<input name="registro" type="submit" value="Registrar"><br><br><br><br><br>
+		</form>
+
+		<form name="ini" action="cartelera.html" method="GET">
+			
+			Iniciar sesión:<br><br>
+			<label for="user">Correo electrónico: </label>
+			<input name="user" placeholder="usuario@usuario.com" type="text"><br>
+			<label for="pw">Contraseña:</label>
+			<input name="pw" type="password" placeholder="contraseña"><br><br>
+			<input type="submit" value="Iniciar">
+		</form>
 	</main>
 	<footer>
-		<address>
-
-		</address>
+		<div class="pie">
+			<p>&copy; 2026 <span>Cines Noah</span> Todos los derechos reservados.</p>
+			<p>Esta web es un proyecto propio realizado para practicar de cara a aprobar
+				el examen de recuperación de Lenguaje de marcas.
+			</p>
+		</div>
+		<div class="frase">Sin miedo al éxito!!</div>
 	</footer>
 	
 </body>
