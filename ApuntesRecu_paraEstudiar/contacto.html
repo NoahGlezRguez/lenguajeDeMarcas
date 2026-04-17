@@ -9,13 +9,15 @@
 	<title>Cines Noah</title>
 	<link rel="stylesheet" type="text/css" href="estilo.css">
 </head>
-<body id="inicio">
+<body class="web">
 	<script type="text/javascript" src="acciones.js"></script>
-	<header>
+	
+	<header id="panelSup">
 		<nav>
-			<ul>
+			<h1 id="cine">Cines Noah</h1>
+			<ul  id="panelSupNav" >
 				<li title="Inicio">
-					<a href="#inicio">Inicio</a>
+					<a href="index.html">Inicio</a>
 				</li>
 				<li title="Cartelera">
 					<a href="cartelera.html">Cartelera</a>
@@ -29,20 +31,50 @@
 				<li title="Ayuda">
 					<a href="ayuda.html">Ayuda</a>
 				</li>
-			
-
 			</ul>
+			<br><br><br>
 		</nav>
-		<main>
-			<section></section>
-			<section></section>
-			<section></section>
-		</main>
-		<footer>
-			<address>
-				
-			</address>
-		</footer>
-	</header>
+	</header>	
+
+	<main>
+		<div class="abierto">
+			<table id="tablaHorarios" title="Horarios del cine">
+				<caption>Horario de apertura del cine</caption>
+				<tr>
+					<th>Hora</th>
+					<th>Lunes</th>
+					<th>Martes</th>
+					<th>Miércoles</th>
+					<th>Jueves</th>
+					<th>Viernes</th>
+					<th>Sábado</th>
+					<th>Domingo</th>
+				</tr>
+				<tr>
+					<td rowspan="2">Apertura</td>
+					<td rowspan="2">10:00h</td>
+					<td>-</td>
+					<td rowspan="2">10:00</td>
+					<td colspan="2">-</td>
+					<td rowspan="2" colspan="2">10:00</td>
+				</tr>
+				<tr>
+					<td>12:00h</td>
+					<td colspan="2">12:00h</td>
+				</tr>
+				<tr>
+					<td>Cierre</td>
+					<td colspan="7">00:00h</td>
+					
+				</tr>
+			</table>
+		</div>
+	</main>
+	<footer>
+		<address>
+
+		</address>
+	</footer>
+	
 </body>
 </html>
