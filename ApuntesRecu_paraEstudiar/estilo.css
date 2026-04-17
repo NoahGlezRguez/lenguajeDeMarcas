@@ -1,3 +1,186 @@
-.panelSupNav {
-	background-color: rgb(244, 240, 255);
+
+* {
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-size: 105%;
+}
+
+body {
+	margin: 0;
+}
+
+#panelSup {
+	background-image: url(./img/cine.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	margin: 0;
+	height: 400px;
+	width: 100%;
+	font-weight: bold;
+}
+
+#cine {
+	font-size: 2.8em;
+	padding-top: 4%;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-style: oblique;
+	position: relative;
+	align-content:end;
+	text-align: center;
+	height: max-content;
+}
+
+#panelSupNav, :link, :visited {
+	text-align: center;
+	display: flex;
+	gap: 15px; 	/* gap ayuda a poner un espacio para cada elemento del flex, en vez de margin y padding */
+	justify-content: center;
+	flex-wrap: nowrap;
+	
+}
+
+#panelSupNav, :link, :visited {
+	color: black;
+	list-style: none;
+	text-decoration: none;
+}
+
+
+
+main {
+	background-color: #091656;
+	color:aliceblue;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	padding-top: 2%;
+	padding-bottom: 5%;
+}
+
+.web {
+	display: flex;
+	flex-direction: column;
+}
+
+.web section {
+	padding-top: 30px;
+	padding-left: 10%;
+	padding-right: 10%;
+	padding-bottom: 30px;
+	border: dotted 5px #00D4FF;
+	border-radius: 35px;
+	margin-bottom: 30px;
+	background-color: #065D95;
+	color:whitesmoke;
+	
+}
+
+.web h3 {
+	color:#091656;
+	font-size: larger;
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+#datos {
+	color:whitesmoke;
+}
+
+.cartelera {
+	display:  flex;
+	flex-direction: column;
+	overflow: visible;
+	justify-content: center;
+	align-items: center;
+}
+
+.peli {
+	display: flex;
+	flex-direction: row;
+	position:static;
+	border: 2px solid rgb(69, 72, 25);
+	background-color: #060d34;
+	justify-content:flex-start;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	margin: 50px;
+	max-width: 1020px;
+}
+
+.peli .sinopsis .titulo{
+	font-weight: bolder;
+	color: cornsilk;
+	text-decoration: overline;
+	font-size: xx-large;
+}
+
+.peli .sinopsis p {
+	display: flex;
+	flex-direction: column;
+	padding-left: 50px;
+	padding-right: 50px;
+	justify-content: center;
+	font-size: 90%;
+}
+
+.caratula {
+	width: 300px;
+	height: 500px;
+	border: 3px solid whitesmoke;
+	margin-left: 20px;
+}
+
+.horarios {
+	color:aquamarine;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 20px;
+	align-items: center;
+	justify-content: center;
+}
+
+.oferta {
+	padding: 10px;
+	border: 1px greenyellow solid;
+	border-radius: 10px;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	font-size: 80%;
+	background-color:#091656;
+}
+
+table, th, td {
+	border: 1px solid rgb(250, 159, 114);
+}
+
+th {
+	padding: 15px;
+	color: goldenrod;
+	font-weight: normal;
+}
+
+td {
+	font-weight: lighter;
+	color: cadetblue;
+	padding: 10px;
+}
+
+table {
+	margin: 50px;
+}
+
+table caption {
+	font-size: 90%;
+	margin-bottom: 15px;
+	color: skyblue;
+	text-decoration: underline;
+	text-decoration-style:double;
+	text-decoration-color: brown;
+	
+}
+
+main .abierto {
+	display: flex;
+	justify-content: center;
 }
