@@ -5,7 +5,11 @@
 }
 
 body {
+	display: flex;
+	flex-direction: column;
 	margin: 0;
+	min-height: 100vh;
+	min-width: 100%;
 }
 
 #panelSup {
@@ -55,6 +59,7 @@ main {
 	flex-direction: column;
 	padding-top: 2%;
 	padding-bottom: 5%;
+	flex-grow: 1;
 }
 
 .web {
@@ -183,4 +188,16 @@ table caption {
 main .abierto {
 	display: flex;
 	justify-content: center;
+}
+
+footer {
+	display: flex;
+	flex-direction: column;
+	background-color: rgb(92, 92, 92);
+	text-align: center;
+	height: 20%;
+	color: rgb(223, 223, 223);
+	padding-bottom: 30px;
+	line-height: 70%;
+	font-size: small;
 }
