@@ -90,7 +90,7 @@ CSS TABLAS:
 CSS FORMULARIOS:
 	- selector de atributos						descripcion							ejemplo
 
-	input[type="tipoQueQuieraDeLosPosibles]		afecta al tipo indicando			input[type="..."] {...}
+	input[type="tipoQueQuieraDeLosPosibles"]	afecta al tipo indicando			input[type="..."] {...}
 
 	- pseudoclases		descripcion							ejemplo
 	
