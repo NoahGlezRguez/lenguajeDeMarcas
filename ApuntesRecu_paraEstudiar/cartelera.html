@@ -6,16 +6,18 @@
 	<meta name="autor" content="Noah G.R.">
 	<meta name="contenido" content="ejercicioDeEstudio">
 	<meta name="subject" content="LLMM_Recuperacion">
-	<title>Cines Noah</title>
+	<title>Cartelera - Cines Noah</title>
 	<link rel="stylesheet" type="text/css" href="estilo.css">
 </head>
-<body id="inicio">
+<body class="web">
 	<script type="text/javascript" src="acciones.js"></script>
-	<header>
+	
+	<header id="panelSup">
 		<nav>
-			<ul>
+			<h1 id="cine">Cines Noah</h1>
+			<ul  id="panelSupNav" >
 				<li title="Inicio">
-					<a href="#inicio">Inicio</a>
+					<a href="index.html">Inicio</a>
 				</li>
 				<li title="Cartelera">
 					<a href="cartelera.html">Cartelera</a>
@@ -29,20 +31,72 @@
 				<li title="Ayuda">
 					<a href="ayuda.html">Ayuda</a>
 				</li>
-			
-
 			</ul>
 		</nav>
-		<main>
-			<section></section>
-			<section></section>
-			<section></section>
-		</main>
-		<footer>
-			<address>
-				
-			</address>
-		</footer>
-	</header>
+	</header>	
+
+	<main>
+		<div class="cartelera">
+			<div class="peli">
+				<img class="caratula" src="./img/chihiro.jpg" title="El viaje de Chihiro"/>
+				<div class="sinopsis">
+					<h2 class="titulo">El viaje de Chihiro</h2>
+					<p>Chihiro es una niña de diez años que, durante una mudanza, se adentra con sus padres en un mundo mágico regido por dioses y espíritus.
+						Tras la transformación de sus padres en cerdos, Chihiro deberá trabajar en una casa de baños termales para una ambiciosa bruja.
+						En este reino de maravillas y peligros, la valentía de una niña será la única llave para recuperar su libertad y su identidad.
+					</p>
+					<div class="horarios">
+						<div class="oferta">Día 22/05/2026<br>a las 16:30h</div>
+						<div class="oferta">Día 23/05/2026<br>a las 11:30h</div>
+						<div class="oferta">Día 23/05/2026<br>a las 20:45h</div>
+						<div class="oferta">Día 24/05/2026<br>a las 18:30h</div>
+						<div class="oferta">Día 26/05/2026<br>a las 20:15h</div>
+					</div>
+				</div>
+			</div>
+			<div class="peli">
+				<img class="caratula" src="./img/mononoke.png"/>
+				<div class="sinopsis">
+					<h2 class="titulo">La princesa Mononoke</h2>
+					<p>En un Japón feudal envuelto en mitos, el joven príncipe Ashitaka busca una cura para una maldición mortal. Su viaje lo lleva al
+						corazón de una guerra épica entre los dioses del bosque y una ciudad industrial que devora los recursos naturales. Allí conocerá
+						a San, la Princesa Mononoke, una joven humana criada por lobos. 
+						Entre el odio y la sangre, ambos buscarán un equilibrio antes de que el espíritu del bosque despierte su furia final.
+					</p>
+					<div class="horarios">
+						<div class="oferta">Día 22/05/2026<br>a las 19:15h</div>
+						<div class="oferta">Día 22/05/2026<br>a las 22:00h</div>
+						<div class="oferta">Día 24/05/2026<br>a las 12:00h</div>
+						<div class="oferta">Día 25/05/2026<br>a las 19:00h</div>
+						<div class="oferta">Día 27/05/2026<br>a las 16:30h</div>
+					</div>
+				</div>
+			</div>
+			<div class="peli">
+				<img class="caratula" src="./img/kaguya.jpg"/>
+				<div class="sinopsis">
+					<h2 class="titulo">El cuento de la princesa Kaguya</h2>
+					<p>Encontrada dentro de un tallo de bambú por un humilde cortador, una diminuta niña se convierte rápidamente en una hermosa mujer
+						que cautiva a todo aquel que la mira. Criada entre la sencillez del campo y la opulencia de la nobleza, Kaguya debe enfrentarse
+						a un destino impuesto por los hombres y por su origen místico.
+						Un relato visualmente poético sobre la belleza efímera de la vida, el deseo y la melancolía de un mundo al que no pertenecemos.
+					</p>
+					<div class="horarios">
+						<div class="oferta">Día 23/05/2026<br>a las 17:00h</div>
+						<div class="oferta">Día 24/05/2026<br>a las 16:00h</div>
+						<div class="oferta">Día 25/05/2026<br>a las 21:30h</div>
+						<div class="oferta">Día 26/05/2026<br>a las 17:45h</div>
+						<div class="oferta">Día 27/05/2026<br>a las 22:30h</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer>
+		<address>
+
+		</address>
+	</footer>
+	
 </body>
 </html>
