@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:simpleType name="fecha">
+		<xs:restriction base="xs:date">
+			<xs:minExclusive value="2025-03-01"></xs:minExclusive>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="hora">
+		<xs:restriction base="xs:time">
+			<xs:minExclusive value="00:00:00"/>
+			<xs:maxExclusive value="23:00:00"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="correo">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[a-zA-A]+@[a-zA-A]+.[a-zA-A]+"></xs:pattern>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="tfno">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[6-9][0-9]{8}"></xs:pattern>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:element name="reservas">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="reserva">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="accommodationType">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:restriction base="xs:string">
+											<xs:pattern value="[A-Z]+[a-z]*"></xs:pattern>
+										</xs:restriction>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="checkInDate" type="fecha"></xs:element>
+							<xs:element name="checkOutDate" type="fecha"></xs:element>
+							<xs:element name="checkInTime" type="hora"></xs:element>
+							<xs:element name="checkOutTime" type="hora"></xs:element>
+							<xs:element name="invitado">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="nombre"></xs:element>
+										<xs:element name="apellido"></xs:element>
+										<xs:element name="email" type="correo"></xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="telefono" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="numero" type="tfno" maxOccurs="2"></xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="id" type="xs:integer"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
