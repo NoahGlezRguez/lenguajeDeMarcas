@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="juego">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="mapa">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="reino">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="nombre"></xs:element>
+										<xs:element name="tamaño">
+											<xs:complexType>
+												<xs:choice>
+													<xs:element name="grande"></xs:element>
+													<xs:element name="mediano"></xs:element>
+													<xs:element name="pequeño"></xs:element>
+												</xs:choice>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="poder"></xs:element>
+										<xs:element name="lider">
+											<xs:complexType>
+												<xs:sequence>
+
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="alianza">
+											<xs:complexType>
+												<xs:choice>
+													<xs:element name="enemigo"></xs:element>
+													<xs:element name="amigo"></xs:element>
+													<xs:element name="neutral"></xs:element>
+												</xs:choice>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="id"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="zonaSinLey">
+								<xs:complexType>
+									<xs:sequence>
+
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="personajes">
+					<xs:complexType>
+						<xs:sequence>
+
+						</xs:sequence>
+						<xs:attribute name="id"></xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+		
+	</xs:element>
+</xs:schema>
