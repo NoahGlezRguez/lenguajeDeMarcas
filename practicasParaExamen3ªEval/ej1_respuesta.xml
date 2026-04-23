@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datacenter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:noNamespaceSchemaLocation="ej1.xsd">
+		
+	<servidor rol="BBDD">
+		<hostname>srv-qwe-23</hostname>
+		<ip_v4>123.32.4.15</ip_v4>
+		<ram unidad="GB">16</ram>
+	</servidor>
+	<servidor rol="Web">
+		<hostname>srv-gfd-78</hostname>
+		<ip_v6>255.76.466.2</ip_v6>
+		<ram unidad="GB">64</ram>
+	</servidor>
+	<servidor rol="Backend">
+		<hostname>srv-odh-21</hostname>
+		<ip_v4>144.633.53.34</ip_v4>
+		<ram unidad="GB">256</ram>
+	</servidor>
+
+</datacenter>

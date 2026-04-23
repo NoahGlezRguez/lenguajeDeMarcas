@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	
+	<xs:simpleType name="matricula">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="M-[A-Z]{5}"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="nota">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:element name="expediente">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="estudiante">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="nota">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="nota">
+											<xs:attribute name="convocatoria" fixed="Ordinaria|Extraordinaria"/>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="matricula" type="matricula" use="required"/>
+					</xs:complexType>
+
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="curso"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

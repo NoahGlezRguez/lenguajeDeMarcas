@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<expediente xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:noNamespaceSchemaLocation="ej2_respuesta.xsd">
+	<estudiante matricula="M-IUHIU">
+		<nota>1</nota>
+	</estudiante>		
+</expediente>
