@@ -36,6 +36,15 @@
 		</xs:restriction>
 	</xs:simpleType>
 
+	<xs:complexType name="estadisticas">
+		<xs:sequence>
+			<xs:element name="Inteligencia" type="escala0al10"></xs:element>
+			<xs:element name="Defensa" type="escala0al10"></xs:element>
+			<xs:element name="Vida" type="escala0al10"></xs:element>
+			<xs:element name="Ataque" type="escala0al10"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
 	<xs:element name="juego">
 		<xs:complexType>
 			<xs:sequence>
@@ -55,6 +64,13 @@
 													<xs:element name="popularidad" type="escala0al10"></xs:element>
 													<xs:element name="tipo" type="caracter" minOccurs="0"></xs:element>
 												</xs:sequence>
+												<xs:attribute name="id">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:pattern value="L[0-99999999]"></xs:pattern>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
 											</xs:complexType>
 										</xs:element>
 										<xs:element name="alianza" type="alianza" minOccurs="0"></xs:element>
@@ -98,12 +114,85 @@
 							<xs:element name="personaje" maxOccurs="unbounded">
 								<xs:complexType>
 									<xs:sequence>
-
+										<xs:element name="nombre" type="xs:string"></xs:element>
+										<xs:element name="EstadisticasBase" type="estadisticas"></xs:element>
+										<xs:element name="Clase">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:enumeration value="Guerrera/o"/>
+													<xs:enumeration value="Druida"/>
+													<xs:enumeration value="Bruja/o"/>
+													<xs:enumeration value="Monja/e"/>
+													<xs:enumeration value="Civil"/>
+													<xs:enumeration value="Lider"/>
+													<xs:enumeration value="Constructor/a"/>
+													<xs:enumeration value="Doctor/a"/>
+													<xs:enumeration value="Investigador/a"/>
+													<xs:enumeration value="Asesina/o"/>
+													<xs:enumeration value="Loca/o"/>
+													<xs:enumeration value="Filosofa/o"/>
+													<xs:enumeration value="Politica/o"/>
+													<xs:enumeration value="Artista"/>
+												</xs:restriction>
+											</xs:simpleType>	
+										</xs:element>
+										<xs:element name="Reino">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:pattern value="R[0-9999]"></xs:pattern>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Objetos">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="arma" minOccurs="0" maxOccurs="2">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="nombre" type="xs:string"></xs:element>
+																<xs:element name="daño">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:integer">
+																			<xs:minExclusive value="0"/>
+																			<xs:maxInclusive value="100"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="comida" minOccurs="0" maxOccurs="10">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="nombre" type="xs:string"></xs:element>
+																<xs:element name="vida">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:integer">
+																			<xs:minExclusive value="0"/>
+																			<xs:maxInclusive value="65"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="herramienta" minOccurs="0" maxOccurs="5">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="nombre" type="xs:string"></xs:element>
+																<xs:element name="uso" type="xs:string"></xs:element>
+																<xs:element name="estadisticasPlus" type="estadisticas"></xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
 									</xs:sequence>
 									<xs:attribute name="id">
 										<xs:simpleType>
 											<xs:restriction base="xs:string">
-												<xs:pattern value="P[0-99999999]"></xs:pattern>
+												<xs:pattern value="(P|L)[0-99999999]"></xs:pattern>
 											</xs:restriction>
 										</xs:simpleType>
 									</xs:attribute>
