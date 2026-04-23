@@ -1,19 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <juego xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		xsi:noNamespaceSchemaLocation="esquema.xsd">
-	<mapa>
-		<reino id="1">
-			<nombre>Narnia</nombre>
-			<tamaño>
-				<grande></grande>
-			</tamaño>
-			<poder></poder>
-			<lider />
-			<alianza>
-				<enemigo></enemigo>
-			</alianza>
-		</reino>
-		<zonaSinLey />
-	</mapa>
-	<personajes />
+	
 </juego>
