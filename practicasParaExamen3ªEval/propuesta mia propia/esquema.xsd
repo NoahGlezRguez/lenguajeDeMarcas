@@ -1,59 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	
+	<xs:simpleType name="tamaño">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="inmenso"/>
+			<xs:enumeration value="grande"/>
+			<xs:enumeration value="mediano"/>
+			<xs:enumeration value="pequeño"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="alianza">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="enemigo"/>
+			<xs:enumeration value="amigo"/>
+			<xs:enumeration value="neutral"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="escala0al10">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="caracter">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="pacifico"/>
+			<xs:enumeration value="agresivo"/>
+			<xs:enumeration value="loco"/>
+			<xs:enumeration value="egolatra"/>
+			<xs:enumeration value="manipulable"/>
+			<xs:enumeration value="sabio"/>
+		</xs:restriction>
+	</xs:simpleType>
+
 	<xs:element name="juego">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="mapa">
+				<xs:element name="mapa" maxOccurs="unbounded">
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="reino">
+							<xs:element name="reino" minOccurs="0" maxOccurs="unbounded">
 								<xs:complexType>
 									<xs:sequence>
-										<xs:element name="nombre"></xs:element>
-										<xs:element name="tamaño">
-											<xs:complexType>
-												<xs:choice>
-													<xs:element name="grande"></xs:element>
-													<xs:element name="mediano"></xs:element>
-													<xs:element name="pequeño"></xs:element>
-												</xs:choice>
-											</xs:complexType>
-										</xs:element>
-										<xs:element name="poder"></xs:element>
+										<xs:element name="nombre" type="xs:string"></xs:element>
+										<xs:element name="tamaño" type="tamaño"></xs:element>
+										<xs:element name="poder" type="escala0al10"></xs:element>
 										<xs:element name="lider">
 											<xs:complexType>
 												<xs:sequence>
-
+													<xs:element name="nombre" type="xs:string"></xs:element>
+													<xs:element name="popularidad" type="escala0al10"></xs:element>
+													<xs:element name="tipo" type="caracter" minOccurs="0"></xs:element>
 												</xs:sequence>
 											</xs:complexType>
 										</xs:element>
-										<xs:element name="alianza">
-											<xs:complexType>
-												<xs:choice>
-													<xs:element name="enemigo"></xs:element>
-													<xs:element name="amigo"></xs:element>
-													<xs:element name="neutral"></xs:element>
-												</xs:choice>
-											</xs:complexType>
-										</xs:element>
+										<xs:element name="alianza" type="alianza" minOccurs="0"></xs:element>
+										<xs:element name="poblacion" type="xs:integer" minOccurs="0"></xs:element>
+										<xs:element name="ubicacion" type="xs:string"></xs:element>
+										<xs:element name="valorRecursos" type="escala0al10" minOccurs="0"></xs:element>
+										<xs:element name="antigüedad" type="xs:gYear" minOccurs="0"></xs:element>
 									</xs:sequence>
-									<xs:attribute name="id"></xs:attribute>
+									<xs:attribute name="id">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:pattern value="R[0-9999]"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
 								</xs:complexType>
 							</xs:element>
 							<xs:element name="zonaSinLey">
 								<xs:complexType>
 									<xs:sequence>
-
+										<xs:element name="tamaño" type="tamaño"></xs:element>
+										<xs:element name="poblacion" type="xs:integer" minOccurs="0"></xs:element>
+										<xs:element name="peligrosidad" type="escala0al10"></xs:element>
+										<xs:element name="valorRecursos" type="escala0al10"></xs:element>
 									</xs:sequence>
 								</xs:complexType>
 							</xs:element>
 						</xs:sequence>
+						<xs:attribute name="id">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:pattern value="M[0-9]{5}"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
 					</xs:complexType>
 				</xs:element>
 				<xs:element name="personajes">
 					<xs:complexType>
 						<xs:sequence>
+							<xs:element name="personaje" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
 
+									</xs:sequence>
+									<xs:attribute name="id">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:pattern value="P[0-99999999]"></xs:pattern>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
 						</xs:sequence>
 						<xs:attribute name="id"></xs:attribute>
 					</xs:complexType>
